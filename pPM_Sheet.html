@@ -5,30 +5,22 @@
     <lightning-button label="Cancel" class="cancel-button" variant="Brand" onclick={handleNavigateBacks}></lightning-button>
     </div>
         <div class="slds-text-align_center">
-             <img src={myImageUrl} alt="Haulbrooke Logo" style="width: 350px;" />
+             <img src={myImageUrl} alt="Haulbrooke Logo" style="width: 400px; height:170px" />
         </div>
             <div class="slds-text-align_center">
-            <h1 style="color: IndianRed; font-size: 16px;margin-top:10px"><b>TRUCK / TRACTOR PM INSPECTION SHEET</b></h1>
+            <h1 style="color: IndianRed; font-size: 16px;margin-top:10px"><b>HAULBROOKE PPM INSPECTION SHEET</b></h1>
         </div>
         <hr style="height:1.5px;background-color: red; width: 100%; margin: auto;margin-top: 13px;">
         <div class="slds-text-align_center">
-            <h1 style="color: red; font-size: 13px;margin-bottom:15px;"><b>VEHICLE AND VENDOR INFORMATION</b></h1>
+            <h1 style="color: red; font-size: 13px;margin-bottom:15px;"><b>UNIT INFORMATION</b></h1>
         </div>
         
             <table class="responsive-table">
                 <tr>
-                    <td data-label="SHOP NAME" class="label-bold">SHOP NAME :&nbsp;{shopName}</td>
-                    <td data-label="NAME OF MOTOR CARRIER" class="label-bold">NAME OF MOTOR CARRIER :&nbsp;{NameOfMotorCarrier}</td> 
+                    <td data-label="SHOP NAME" class="label-bold">SHOP LOCATION :&nbsp;{shopName}</td>
+                    <!--<td data-label="NAME OF MOTOR CARRIER" class="label-bold">NAME OF MOTOR CARRIER :&nbsp;{NameOfMotorCarrier}</td> -->
                     <td data-label="DATE" class="label-bold">DATE :&nbsp;{date}</td>
-                </tr>
-                <tr>
-                    <td colspan="6">
-                        <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" />
-                    </td>
-                </tr>
-                <tr>
-                    <td data-label="WFS PO#"><label class="label-bold">WFS PO# :</label>&nbsp;{WFSPO}</td> 
-                                <td data-label="MILEAGE"><label class="label-bold">MILEAGE :</label>&nbsp;{Mileage}</td> 
+                    <td data-label="MILEAGE"><label class="label-bold">MILEAGE :</label>&nbsp;{Mileage}</td> 
 
                 </tr>
                 <tr>
@@ -36,6 +28,7 @@
                         <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" />
                     </td>
                 </tr>
+                
                 <tr>
                     <td data-label="UNIT #"><label class="label-bold">UNIT # :</label>&nbsp;{Unit} </td> 
                                 <td data-label="VIN"><label class="label-bold">VIN :</label>&nbsp;{VIN}</td>
@@ -788,15 +781,15 @@
             
             <hr style="height:1.5px;background-color: red; width: 100%; margin: auto;margin-top: 13px;">
             <div class="last">
-               <p><span class="label-extra-bold"> CERTIFICATION: </span>This vehicle has been inspected and repaired as needed to comply with 49 CFR 396 and the minimum requirements of 34505.5 CVC</p>
-               <p style="text-align:center">Digital Signature*:<img src={DigitalSignatureImg} width="20" height="20" style="vertical-align: middle;" alt="Checkbox" /></p>
+               <p><span class="label-extra-bold"> CERTIFICATION: </span>This vehicle has been inspected and repaired as needed to comply with DOT regulations.</p>
+               <p style="text-align:center">Mechanic Signature*:<img src={DigitalSignatureImg} width="20" height="20" style="vertical-align: middle;" alt="Checkbox" /></p>
                <table class="responsive-table"> 
                 <tr> 
-                    <td style="font-size:15px"><label class="label-extra-bold">Printed Name of Inspector:</label>&nbsp;<u>&nbsp;&nbsp;{PrintedNameOfInspector}&nbsp;</u></td> 
-                    <td style="font-size:15px"><label class="label-extra-bold">Signature of Inspector:</label>&nbsp;<u>&nbsp;&nbsp;{SignatureOfInspector}&nbsp;</u></td> 
+                    <td style="font-size:15px"><label class="label-extra-bold">Printed Name of Maintenance Manager:</label>&nbsp;<u>&nbsp;&nbsp;{PrintedNameOfInspector}&nbsp;</u></td> 
+                    <td style="font-size:15px"><label class="label-extra-bold">Signature of Maintenance Manager:</label>&nbsp;<u>&nbsp;&nbsp;{SignatureOfInspector}&nbsp;</u></td> 
                 </tr> 
                 </table>
-                <p>By either checking this box (for digital submission) or signing (for printed/fax submission), the inspector is certifying that he/she is qualified to perform this inspection per the requirements of 49 CFR 396.19</p>
+                <p>I certify that I have reviewed this inspection report and verified its compliance with DOT regulations and company standards.</p>
             </div>
         </div>
     </template>
@@ -810,37 +803,35 @@
          <lightning-button label="Back" variant="neutral" onclick={handleNavigateBack}></lightning-button>
         </div>
         <div class="slds-text-align_center">
-             <img src={myImageUrl} alt="Haulbrooke Logo" style="width: 350px;" />
+             <img src={myImageUrl} alt="Haulbrooke Logo" style="width: 400px; height:170px" />
         </div>
         <div class="slds-text-align_center">
-            <h1 style="color: IndianRed; font-size: 16px;margin-top:10px"><b>TRUCK / TRACTOR PM INSPECTION SHEET</b></h1>
+            <h1 style="color: IndianRed; font-size: 16px;margin-top:10px"><b>HAULBROOKE PPM INSPECTION SHEET</b></h1>
         </div>
         <hr style="height:1.5px;background-color: red; width: 97%; margin: auto;margin-top: 13px;">
         <div class="slds-text-align_center">
-            <h1 style="color: red; font-size: 13px;margin-bottom:15px;"><b>VEHICLE AND VENDOR INFORMATION</b></h1>
+            <h1 style="color: red; font-size: 13px;margin-bottom:15px;"><b>UNIT INFORMATION</b></h1>
         </div>
         <div class="container"> 
             <table class="shop-table"> 
                 <tr> 
-                    <td data-label="SHOP NAME" class="label-bold"><span class="mobile-responsive-input">SHOP NAME :</span>&nbsp; <lightning-input style="margin-top:-20px; width: 250px;" type="text" data-field="Shop_Name__c" value={shopName} onchange={handleInputChange}></lightning-input></td>
-                    <td data-label="NAME OF MOTOR CARRIER" class="label-bold"><span class="mobile-responsive-input">NAME OF MOTOR CARRIER :</span>&nbsp;<lightning-input class="mobile-responsive-input" style="margin-top:-20px;width: 250px;" type="text" data-field="Name_Of_Motor_Carrier__c" value={NameOfMotorCarrier} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="SHOP NAME" class="label-bold"><span class="mobile-responsive-input">SHOP LOCATION :</span>&nbsp; <lightning-input style="margin-top:-20px; width: 250px;" type="text" data-field="Shop_Name__c" value={shopName} onchange={handleInputChange}></lightning-input></td>
+                    <!-- <td data-label="NAME OF MOTOR CARRIER" class="label-bold"><span class="mobile-responsive-input">NAME OF MOTOR CARRIER :</span>&nbsp;<lightning-input class="mobile-responsive-input" style="margin-top:-20px;width: 250px;" type="text" data-field="Name_Of_Motor_Carrier__c" value={NameOfMotorCarrier} onchange={handleInputChange}></lightning-input></td> -->
+
                     <td data-label="DATE" class="label-bold"><span class="mobile-responsive-input">DATE :</span>&nbsp;<lightning-input class="mobile-responsive-input" style="margin-top:-20px;width: 250px;" type="Date"  data-field="Date__c" value={date} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="MILEAGE" class="label-bold"><span class="mobile-responsive-input">MILEAGE :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;"  data-field="Mileage__c" type='number' value={Mileage} onchange={handleInputChange}></lightning-input></td> 
                 </tr> 
             </table>
             <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" /> 
             <table class="shop-table"> 
                 <tr> 
-                    <td data-label="WFS PO#" class="label-bold"><span class="mobile-responsive-input">WFS PO# :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="WFS_PO__c" value={WFSPO} onchange={handleInputChange}></lightning-input></td> 
-                    <td data-label="MILEAGE" class="label-bold"><span class="mobile-responsive-input">MILEAGE :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="Mileage__c" value={Mileage} onchange={handleInputChange}></lightning-input></td> 
-                </tr> 
-            </table>
-            <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" /> 
-            <table class="shop-table"> 
-                <tr> 
+                    <!--<td data-label="WFS PO#" class="label-bold"><span class="mobile-responsive-input">WFS PO# :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="WFS_PO__c" value={WFSPO} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="MILEAGE" class="label-bold"><span class="mobile-responsive-input">MILEAGE :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="Mileage__c" value={Mileage} onchange={handleInputChange}></lightning-input></td>--> 
                     <td data-label="UNIT #" class="label-bold"><span class="mobile-responsive-input">UNIT # :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="Unit__c" value={Unit} onchange={handleInputChange}></lightning-input></td> 
                     <td data-label="VIN" class="label-bold"><span class="mobile-responsive-input">VIN :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="text"  data-field="VIN__c" value={VIN} onchange={handleInputChange}></lightning-input></td> 
                 </tr> 
-            </table> 
+            </table>
+            
             <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" /> 
             <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 3px;" />  
             <div class="center-text"> <h1 style="color: red;  font-size: 13px;"><b>INDICATE WHICH SERVICE / INSPECTION WAS PERFORMED</b></h1> </div>  
@@ -2827,15 +2818,15 @@
             
             <hr style="height:1.5px;background-color: red; width: 100%; margin: auto;margin-top: 13px;">
             <div class="last">
-               <p><span class="label-extra-bold"> CERTIFICATION: </span>This vehicle has been inspected and repaired as needed to comply with 49 CFR 396 and the minimum requirements of 34505.5 CVC</p>
-               <p style="text-align:center">Digital Signature*:<lightning-input style="margin-top:-20px; width: 250px; display:inline-block;" type="text-area" data-field="Digital_Signature__c" onchange={handleInputChange}></lightning-input></lightning-input></p>
+               <p><span class="label-extra-bold"> CERTIFICATION: </span>This vehicle has been inspected and repaired as needed to comply with DOT regulations.</p>
+               <p style="text-align:center">Mechanic Signature*:<lightning-input style="margin-top:-20px; width: 250px; display:inline-block;" type="text-area" data-field="Digital_Signature__c" onchange={handleInputChange}></lightning-input></lightning-input></p>
                <table class="responsive-table"> 
                 <tr> 
-                    <td style="font-size:15px"><label class="label-extra-bold">Printed Name of Inspector:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 250px;" type="text-area" data-field="Printed_Name_of_Inspector__c" value={PrintedNameOfInspector} onchange={handleInputChange}></lightning-input></td> 
-                    <td style="font-size:15px"><label class="label-extra-bold">Signature of Inspector:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 250px;" type="text" data-field="Signature_of_Inspector__c" value={SignatureOfInspector} onchange={handleInputChange}></lightning-input></td> 
+                    <td style="font-size:15px"><label class="label-extra-bold">Printed Name of Maintenance Manager:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 250px;" type="text-area" data-field="Printed_Name_of_Inspector__c" value={PrintedNameOfInspector} onchange={handleInputChange}></lightning-input></td> 
+                    <td style="font-size:15px"><label class="label-extra-bold">Signature of Maintenance Manager:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 250px;" type="text" data-field="Signature_of_Inspector__c" value={SignatureOfInspector} onchange={handleInputChange}></lightning-input></td> 
                 </tr> 
                 </table>
-                <p>By either checking this box (for digital submission) or signing (for printed/fax submission), the inspector is certifying that he/she is qualified to perform this inspection per the requirements of 49 CFR 396.19</p>
+                <p>I certify that I have reviewed this inspection report and verified its compliance with DOT regulations and company standards.</p>
             </div>
         </div>
 
