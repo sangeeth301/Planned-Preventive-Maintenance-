@@ -791,8 +791,46 @@ updatePicklistField(fieldName, selectedValue) { // Update the state for the fiel
     console.log('Updated Fields:', this.fields);
 }
 
+    validateFields() {
+        const validations = [
+            {
+                field: 'Mileage__c',
+                condition: (value) => /^[0-9]+$/.test(value),
+                errorMessage: 'Mileage must contain only numeric values.'
+            },
+            {
+                field: 'Unit__c',
+                condition: (value) => /^[0-9]+$/.test(value),
+                errorMessage: 'Unit must contain only numeric values.'
+            }
+        ];
+
+        for (const { field, condition, errorMessage } of validations) {
+            if (field in this.fields) {
+                const value = this.fields[field];
+                if (!condition(value)) {
+                    this.dispatchEvent(
+                        new ShowToastEvent({
+                            title: 'Validation Error',
+                            message: errorMessage,
+                            variant: 'error',
+                        })
+                    );
+                    return false;
+                }
+            }
+        }
+
+        return true;
+    }
+
+
 
     handleSave() {
+
+        if (!this.validateFields()) {
+            return; // Stop the save operation if validation fails
+        }
         
         const fields = { ...this.fields, Id: this.recordId };
 
