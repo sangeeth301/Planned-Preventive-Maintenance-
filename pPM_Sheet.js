@@ -795,12 +795,12 @@ updatePicklistField(fieldName, selectedValue) { // Update the state for the fiel
         const validations = [
             {
                 field: 'Mileage__c',
-                condition: (value) => /^[0-9]+$/.test(value),
+                condition: (value) => !value || /^[0-9]+$/.test(value),
                 errorMessage: 'Mileage must contain only numeric values.'
             },
             {
                 field: 'Unit__c',
-                condition: (value) => /^[0-9]+$/.test(value),
+                condition: (value) => !value || /^[0-9]+$/.test(value),
                 errorMessage: 'Unit must contain only numeric values.'
             }
         ];
