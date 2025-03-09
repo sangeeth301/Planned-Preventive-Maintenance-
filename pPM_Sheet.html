@@ -17,10 +17,10 @@
         
             <table class="responsive-table">
                 <tr>
-                    <td data-label="SHOP NAME" class="label-bold">SHOP LOCATION :&nbsp;{shopName}</td>
+                    <td data-label="SHOP NAME" class="label-bold">SHOP LOCATION :&nbsp;{fields.Shop_Name__c}</td>
                     <!--<td data-label="NAME OF MOTOR CARRIER" class="label-bold">NAME OF MOTOR CARRIER :&nbsp;{NameOfMotorCarrier}</td> -->
-                    <td data-label="DATE" class="label-bold">DATE :&nbsp;{date}</td>
-                    <td data-label="MILEAGE"><label class="label-bold">MILEAGE :</label>&nbsp;{Mileage}</td> 
+                    <td data-label="DATE" class="label-bold">DATE :&nbsp;{fields.Date__c}</td>
+                    <td data-label="MILEAGE"><label class="label-bold">MILEAGE :</label>&nbsp;{fields.Mileage__c}</td> 
 
                 </tr>
                 <tr>
@@ -30,8 +30,8 @@
                 </tr>
                 
                 <tr>
-                    <td data-label="UNIT #"><label class="label-bold">UNIT # :</label>&nbsp;{Unit} </td> 
-                                <td data-label="VIN"><label class="label-bold">VIN :</label>&nbsp;{VIN}</td>
+                    <td data-label="UNIT #"><label class="label-bold">UNIT # :</label>&nbsp;{fields.Unit__c} </td> 
+                                <td data-label="VIN"><label class="label-bold">VIN :</label>&nbsp;{fields.VIN__c}</td>
                 </tr>
             </table> 
             <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" /> 
@@ -73,10 +73,10 @@
                                             <td data-label="ADJUST BRAKES AS NEEDED"> <img src={adjustBrakesImage} width="20" height="20" alt="Checkbox" /> <span><label>ADJUST BRAKES AS NEEDED</label></span> 
                                             </td> 
                                         </tr> 
-                                       <td><img src={coolantImage} width="20" height="20" alt="Checkbox" />CHECK REGULAR COOLANT: DCA Reading:<u>&nbsp;&nbsp;{DCA_Reading}&nbsp;&nbsp;</u></td> 
+                                       <td><img src={coolantImage} width="20" height="20" alt="Checkbox" />CHECK REGULAR COOLANT: DCA Reading:<u>&nbsp;&nbsp;{fields.DCA_Reading__c}&nbsp;&nbsp;</u></td> 
 
                                          <tr> 
-                                            <td><img src={extentLifeCoolandimg} width="20" height="20" alt="Checkbox" />EXTENDED LIFE COOLANT: CHECK FREEZE PROTECTION LEVEL DEGREE Reading:<u>&nbsp;{DegreeReading}&nbsp;&nbsp;</u></td>
+                                            <td><img src={extentLifeCoolandimg} width="20" height="20" alt="Checkbox" />EXTENDED LIFE COOLANT: CHECK FREEZE PROTECTION LEVEL DEGREE Reading:<u>&nbsp;{fields.Degree_Reading__c}&nbsp;&nbsp;</u></td>
                                         </tr> 
                                     </table> 
                                 </td> 
@@ -84,33 +84,33 @@
                                     <table class="responsive-table1"> 
                                         <tr> 
                                             <td data-label="LF">LF:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{lfTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.LF_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{lfBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.LF_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr> 
                                         <tr> 
                                             <td data-label="LFO">LFO:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{lfoTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.LFO_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{lfoBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.LFO_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr> 
                                         <tr> 
                                             <td data-label="LFI">LFI:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{lfiTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.LFI_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{lfiBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.LFI_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr> 
                                         <tr> 
                                             <td data-label="LRO">LRO:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{lroTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.LRO_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{lroBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.LRO_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr>
                                         <tr> 
                                             <td data-label="LRI">LRI:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{lriTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.LRI_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{lriBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.LRI_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr> 
                                     </table> 
                                 </td> 
@@ -121,38 +121,38 @@
 
                                         <tr> 
                                             <td data-label="RF">RF:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{rfTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.RF_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{rfBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.RF_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr>
 
                                         <tr> 
                                             <td data-label="RFO">RFO:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{rfoTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.RFO_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{rfoBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.RFO_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr>
 
                                         
                                         <tr> 
                                             <td data-label="RFI">RFI:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{rfiTiers}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.RFI_Tiers__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{rfiBreaks}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.RFI_Breaks__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr>
                                    
                                         <tr> 
                                             <td data-label="RRO">RRO:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{rroTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.RRO_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{rroBreaks}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.RRO_Breaks__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr>
 
                                         <tr> 
                                             <td data-label="RRI">RRI:</td>
-                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{rriTires}&nbsp;&nbsp;</u>&nbsp;/32</td>
+                                            <td style="font-weight:500">Tires:&nbsp;<u>&nbsp;&nbsp;{fields.RRI_Tires__c}&nbsp;&nbsp;</u>&nbsp;/32</td>
                                             <td></td>
-                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{rriBrakes}&nbsp;&nbsp;</u>&nbsp;/32</td> 
+                                            <td style="font-weight:500">Breaks&nbsp;:&nbsp;<u>&nbsp;&nbsp;{fields.RRI_Brakes__c}&nbsp;&nbsp;</u>&nbsp;/32</td> 
                                         </tr>
                                     </table>
                                 </td>
@@ -743,7 +743,7 @@
 
                         <div style=" display: grid; grid-template-columns: 17px auto;gap: 10px;margin-top:15px;"> 
                             <div> C.</div>
-                            <div>DOT Inspection Sticker Expiration Date:<u><br> {DOT_InspectionStickerExpirationDate}</u>
+                            <div>DOT Inspection Sticker Expiration Date:<u><br> {fields.DOT_Inspection_Expiration_Date__c}</u>
                             </div>
                         </div>
                         
@@ -764,7 +764,7 @@
 
                          <div style=" display: grid; grid-template-columns: 17px auto;gap: 10px;margin-top:15px;"> 
                             <div> F.</div>
-                            <div> State Inspection Sticker Expiration Date:<u><br>{StateInspectionStickerExpirationDate}</u>
+                            <div> State Inspection Sticker Expiration Date:<u><br>{fields.State_Inspection_Sticker_Expiration_Date__c}</u>
                             </div>
                         </div>
                     
@@ -775,7 +775,7 @@
             </div>
             <div class="commends">
                 Comments:
-                <p style="white-space: pre-wrap;font-weight:600; font-size:14px;">{Commends}</p>
+                <p style="white-space: pre-wrap;font-weight:600; font-size:14px;">{fields.Comments__c}</p>
             </div>
             
             <hr style="height:1.5px;background-color: red; width: 100%; margin: auto;margin-top: 13px;">
@@ -784,8 +784,8 @@
                <p style="text-align:center"><label style="font-weight:700;">Mechanic Signature*:</label><img src={DigitalSignatureImg} width="20" height="20" alt="Checkbox" /></p>
                <table class="responsive-table"> 
                 <tr> 
-                    <td style="font-size:15px"><label style="font-weight:700;">Printed Name of Maintenance Manager:</label>&nbsp;<u>&nbsp;&nbsp;{PrintedNameOfInspector}&nbsp;</u></td> 
-                    <td style="font-size:15px"><label style="font-weight:700;">Signature of Maintenance Manager:</label>&nbsp;<u>&nbsp;&nbsp;{SignatureOfInspector}&nbsp;</u></td> 
+                    <td style="font-size:15px"><label style="font-weight:700;">Printed Name of Maintenance Manager:</label>&nbsp;<u>&nbsp;&nbsp;{fields.Printed_Name_of_Inspector__c}&nbsp;</u></td> 
+                    <td><p style="text-align:center"><label style="font-weight:700;">Signature of Maintenance Manager:</label><img src={MaintanenceDigitalSignatureImg} width="20" height="20" alt="Checkbox" /></p></td>
                 </tr> 
                 </table>
                 <p>I certify that I have reviewed this inspection report and verified its compliance with DOT regulations and company standards.</p>
@@ -814,11 +814,11 @@
         <div class="container"> 
             <table class="shop-table"> 
                 <tr> 
-                    <td data-label="SHOP NAME" class="label-bold"><span class="mobile-responsive-input">SHOP LOCATION :</span>&nbsp; <lightning-input  class="slds-m-top_x-small" type="text" data-field="Shop_Name__c" value={shopName} onchange={handleInputChange}></lightning-input></td>
+                    <td data-label="SHOP NAME" class="label-bold"><span class="mobile-responsive-input">SHOP LOCATION :</span>&nbsp; <lightning-input  class="slds-m-top_x-small" type="text" data-field="Shop_Name__c" value={fields.Shop_Name__c} onchange={handleInputChange}></lightning-input></td>
                     <!-- <td data-label="NAME OF MOTOR CARRIER" class="label-bold"><span class="mobile-responsive-input">NAME OF MOTOR CARRIER :</span>&nbsp;<lightning-input class="mobile-responsive-input" style="margin-top:-20px;width: 250px;" type="text" data-field="Name_Of_Motor_Carrier__c" value={NameOfMotorCarrier} onchange={handleInputChange}></lightning-input></td> -->
 
-                    <td data-label="DATE" class="label-bold"><span class="mobile-responsive-input">DATE :</span>&nbsp;<lightning-input class="slds-m-top_x-small" type="Date"  data-field="Date__c" value={date} onchange={handleInputChange}></lightning-input></td> 
-                    <td data-label="MILEAGE" class="label-bold"><span class="mobile-responsive-input">MILEAGE :</span>&nbsp;<lightning-input class="slds-m-top_x-small"  data-field="Mileage__c"  value={Mileage} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="DATE" class="label-bold"><span class="mobile-responsive-input">DATE :</span>&nbsp;<lightning-input class="slds-m-top_x-small" type="Date"  data-field="Date__c" value={fields.Date__c} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="MILEAGE" class="label-bold"><span class="mobile-responsive-input">MILEAGE :</span>&nbsp;<lightning-input class="slds-m-top_x-small"  data-field="Mileage__c"  value={fields.Mileage__c} onchange={handleInputChange}></lightning-input></td> 
                 </tr> 
             </table>
             <hr style="height: 1.5px; background-color: black; border: none; margin-bottom: 5px; margin-top: 4px;" /> 
@@ -826,8 +826,8 @@
                 <tr> 
                     <!--<td data-label="WFS PO#" class="label-bold"><span class="mobile-responsive-input">WFS PO# :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="WFS_PO__c" value={WFSPO} onchange={handleInputChange}></lightning-input></td> 
                     <td data-label="MILEAGE" class="label-bold"><span class="mobile-responsive-input">MILEAGE :</span>&nbsp;<lightning-input style="margin-top:-20px;width: 250px;" type="number"  data-field="Mileage__c" value={Mileage} onchange={handleInputChange}></lightning-input></td>--> 
-                    <td data-label="UNIT #" class="label-bold"><span class="mobile-responsive-input">UNIT # :</span>&nbsp;<lightning-input class="slds-m-top_x-small"  data-field="Unit__c" value={Unit} onchange={handleInputChange}></lightning-input></td> 
-                    <td data-label="VIN" class="label-bold"><span class="mobile-responsive-input">VIN :</span>&nbsp;<lightning-input class="slds-m-top_x-small" type="text"  data-field="VIN__c" value={VIN} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="UNIT #" class="label-bold"><span class="mobile-responsive-input">UNIT # :</span>&nbsp;<lightning-input class="slds-m-top_x-small"  data-field="Unit__c" value={fields.Unit__c} onchange={handleInputChange}></lightning-input></td> 
+                    <td data-label="VIN" class="label-bold"><span class="mobile-responsive-input">VIN :</span>&nbsp;<lightning-input class="slds-m-top_x-small" type="text"  data-field="VIN__c" value={fields.VIN__c} onchange={handleInputChange}></lightning-input></td> 
                 </tr> 
             </table>
             
@@ -836,11 +836,11 @@
             <div class="center-text"> <h1 style="color: red;  font-size: 13px;"><b>INDICATE WHICH SERVICE / INSPECTION WAS PERFORMED</b></h1> </div>  
             <table> 
                 <tr> 
-                    <td> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="APM_Dry_Service__c" checked={APM_DryService} onchange={handleInputChange}></lightning-input> <span><label class="label-bold">APM (Dry) Service</label></span> 
+                    <td> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="APM_Dry_Service__c" checked={fields.APM_Dry_Service__c} onchange={handleInputChange}></lightning-input> <span><label class="label-bold">APM (Dry) Service</label></span> 
                     </td> 
                 </tr> 
                 <tr> 
-                    <td> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="BPM_Wet_Service__c" checked={BPM_WetService} onchange={handleInputChange}></lightning-input> <span><label class="label-bold">BPM (Wet) Service</label></span> <span>&nbsp;<label class="label-extra-bold">**INCLUDES CHANGING OIL, OIL FILTERS AND FUEL FILTERS**</label></span> </td> 
+                    <td> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="BPM_Wet_Service__c" checked={fields.BPM_Wet_Service__c} onchange={handleInputChange}></lightning-input> <span><label class="label-bold">BPM (Wet) Service</label></span> <span>&nbsp;<label class="label-extra-bold">**INCLUDES CHANGING OIL, OIL FILTERS AND FUEL FILTERS**</label></span> </td> 
                 </tr> 
             </table> <hr style="height: 1.5px; background-color: red; border: none; margin-bottom: 5px; margin-top: 4px;" /> 
                 <div class="center-text"> <h1 style="color: red;  font-size: 13px;margin-bottom:15px;"><b>VISUALLY INSPECT AND ADVISE / CHECK EACH ITEM AS COMPLETED</b></h1> </div> 
@@ -855,33 +855,33 @@
                                 <td > 
                                     <table class="responsive-table1"> 
                                         <tr> 
-                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Inspect_Air_Cleaners_and_Advise__c" checked={InspectAirCleanersAdvise} onchange={handleInputChange}></lightning-input>INSPECT AIR CLEANERS AND ADVISE</td> 
+                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Inspect_Air_Cleaners_and_Advise__c" checked={fields.Inspect_Air_Cleaners_and_Advise__c} onchange={handleInputChange}></lightning-input>INSPECT AIR CLEANERS AND ADVISE</td> 
                                         </tr> 
                                         <tr>
-                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Grease_All_Fittings_and_Fifth_Wheel__c" checked={GreaseFittingsFifthWheel} onchange={handleInputChange}></lightning-input>GREASE ALL FITTINGS AND FIFTH WHEEL</td>
+                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Grease_All_Fittings_and_Fifth_Wheel__c" checked={fields.Grease_All_Fittings_and_Fifth_Wheel__c} onchange={handleInputChange}></lightning-input>GREASE ALL FITTINGS AND FIFTH WHEEL</td>
  
                                         </tr> 
                                         <tr>
-                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Check_and_Fill_All_Fluids__c" checked={CheckFillFluids} onchange={handleInputChange}></lightning-input>CHECK AND FILL ALL FLUIDS</td>
+                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Check_and_Fill_All_Fluids__c" checked={fields.Check_and_Fill_All_Fluids__c} onchange={handleInputChange}></lightning-input>CHECK AND FILL ALL FLUIDS</td>
                                         </tr>
                                         <tr> 
-                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Adjust_Brakes_As_Needed__c" checked={AdjustBrakes} onchange={handleInputChange}></lightning-input>ADJUST BRAKES AS NEEDED</td> 
+                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Adjust_Brakes_As_Needed__c" checked={fields.Adjust_Brakes_As_Needed__c} onchange={handleInputChange}></lightning-input>ADJUST BRAKES AS NEEDED</td> 
                                         </tr> 
                                         <tr> 
-                                             <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Check_Regular_Coolant__c" checked={CheckRegularCoolant} onchange={handleInputChange}></lightning-input>CHECK REGULAR COOLANT: DCA Reading:<lightning-input 
+                                             <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Check_Regular_Coolant__c" checked={fields.Check_Regular_Coolant__c} onchange={handleInputChange}></lightning-input>CHECK REGULAR COOLANT: DCA Reading:<lightning-input 
                                                 class="reading" 
                                                 type="number" 
                                                 data-field="DCA_Reading__c" 
-                                                value={DCA_Reading} 
+                                                value={fields.DCA_Reading__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input></td>
                                         </tr>
                                          <tr> 
-                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Extended_Life_Coolant_Check_FPL__c" checked={extentLifeCooland} onchange={handleInputChange}></lightning-input>EXTENDED LIFE COOLANT: CHECK FREEZE PROTECTION LEVEL DEGREE Reading:<lightning-input 
+                                            <td><lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Extended_Life_Coolant_Check_FPL__c" checked={fields.Extended_Life_Coolant_Check_FPL__c} onchange={handleInputChange}></lightning-input>EXTENDED LIFE COOLANT: CHECK FREEZE PROTECTION LEVEL DEGREE Reading:<lightning-input 
                                                 class="reading" 
                                                 type="number" 
                                                 data-field="Degree_Reading__c" 
-                                                value={DegreeReading} 
+                                                value={fields.Degree_Reading__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input></td>
 
@@ -897,7 +897,7 @@
                                                     class="input-tire" 
                                                     type="number" 
                                                     data-field="LF_Tires__c" 
-                                                    value={lfTires} 
+                                                    value={fields.LF_Tires__c} 
                                                     onchange={handleInputChange}>
                                                     </lightning-input>&nbsp;/&nbsp;32
                                             </td>
@@ -906,7 +906,7 @@
                                                     class="input-tire" 
                                                     type="number" 
                                                     data-field="LF_Brakes__c" 
-                                                    value={lfBrakes} 
+                                                    value={fields.LF_Brakes__c} 
                                                     onchange={handleInputChange}>
                                                     </lightning-input>&nbsp;/&nbsp;32
                                             </td>
@@ -917,7 +917,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LFO_Tires__c" 
-                                                value={lfoTires} 
+                                                value={fields.LFO_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -926,7 +926,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LFO_Brakes__c" 
-                                                value={lfoBrakes} 
+                                                value={fields.LFO_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr> 
@@ -936,7 +936,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LFI_Tires__c" 
-                                                value={lfiTires} 
+                                                value={fields.LFI_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -945,7 +945,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LFI_Brakes__c" 
-                                                value={lfiBrakes} 
+                                                value={fields.LFI_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr> 
@@ -955,7 +955,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LRO_Tires__c" 
-                                                value={lroTires} 
+                                                value={fields.LRO_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -964,7 +964,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LRO_Brakes__c" 
-                                                value={lroBrakes} 
+                                                value={fields.LRO_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr>
@@ -974,7 +974,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LRI_Tires__c" 
-                                                value={lriTires} 
+                                                value={fields.LRI_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -983,7 +983,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="LRI_Brakes__c" 
-                                                value={lriBrakes} 
+                                                value={fields.LRI_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr> 
@@ -1000,7 +1000,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RF_Tires__c" 
-                                                value={rfTires} 
+                                                value={fields.RF_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -1009,7 +1009,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RF_Brakes__c" 
-                                                value={rfBrakes} 
+                                                value={fields.RF_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
 
@@ -1021,7 +1021,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RFO_Tires__c" 
-                                                value={rfoTires} 
+                                                value={fields.RFO_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -1030,7 +1030,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RFO_Brakes__c" 
-                                                value={rfoBrakes} 
+                                                value={fields.RFO_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr>
@@ -1042,7 +1042,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RFI_Tiers__c" 
-                                                value={rfiTiers} 
+                                                value={fields.RFI_Tiers__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -1051,7 +1051,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RFI_Breaks__c" 
-                                                value={rfiBreaks} 
+                                                value={fields.RFI_Breaks__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr>
@@ -1062,7 +1062,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RRO_Tires__c" 
-                                                value={rroTires} 
+                                                value={fields.RRO_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -1071,7 +1071,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RRO_Breaks__c" 
-                                                value={rroBreaks} 
+                                                value={fields.RRO_Breaks__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr>
@@ -1082,7 +1082,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RRI_Tires__c" 
-                                                value={rriTires} 
+                                                value={fields.RRI_Tires__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>
                                                 &nbsp;/&nbsp;32</td>
@@ -1091,7 +1091,7 @@
                                                 class="input-tire" 
                                                 type="number" 
                                                 data-field="RRI_Brakes__c" 
-                                                value={rriBrakes} 
+                                                value={fields.RRI_Brakes__c} 
                                                 onchange={handleInputChange}>
                                                 </lightning-input>&nbsp;/&nbsp;32</td>
                                         </tr>
@@ -1101,7 +1101,7 @@
                         </table>
 
         </div>
-        <div class="filledTo100PSI"> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Ensure_All_Tires_Are_Filled_To_100_PSI__c" checked={EnsureAllTiresFilled100PSI} onchange={handleInputChange}></lightning-input><span><label>Ensure all the tires are filled to 100 PSI</label></span></div>
+        <div class="filledTo100PSI"> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Ensure_All_Tires_Are_Filled_To_100_PSI__c" checked={fields.Ensure_All_Tires_Are_Filled_To_100_PSI__c} onchange={handleInputChange}></lightning-input><span><label>Ensure all the tires are filled to 100 PSI</label></span></div>
 
         <div class="slds-p-around_medium">
 
@@ -2862,13 +2862,13 @@
 
                         <div class="txt"> 
                             <div> B.</div>
-                            <div> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Completed_DOT_Inspection__c" checked={CompletedDOT_Inspection} onchange={handleInputChange}></lightning-input> Completed DOT inspection and applied a new decal 
+                            <div> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Completed_DOT_Inspection__c" checked={fields.Completed_DOT_Inspection__c} onchange={handleInputChange}></lightning-input> Completed DOT inspection and applied a new decal 
                             </div>
                         </div>
 
                         <div class="txt"> 
                             <div class="txt-CandF"> C.</div>
-                            <div> DOT Inspection Sticker Expiration Date:<lightning-input style="display: inline-block; width:150px;" type="Date"  data-field="DOT_Inspection_Expiration_Date__c" value={DOT_InspectionStickerExpirationDate} onchange={handleInputChange}></lightning-input>
+                            <div> DOT Inspection Sticker Expiration Date:<lightning-input style="display: inline-block; width:150px;" type="Date"  data-field="DOT_Inspection_Expiration_Date__c" value={fields.DOT_Inspection_Expiration_Date__c} onchange={handleInputChange}></lightning-input>
                             </div>
                         </div>
                         
@@ -2883,13 +2883,13 @@
 
                         <div class="txt"> 
                             <div> E.</div>
-                            <div> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Completed_State_Inspection__c" checked={CompletedStateInspection} onchange={handleInputChange}></lightning-input>Completed State Inspection and applied a new decal
+                            <div> <lightning-input style="width: 20;height:20;display:inline-block;" type="checkbox" data-field="Completed_State_Inspection__c" checked={fields.Completed_State_Inspection__c} onchange={handleInputChange}></lightning-input>Completed State Inspection and applied a new decal
                             </div>
                         </div>
                     
                         <div class="txt"> 
                             <div class="txt-CandF"> F.</div>
-                            <div> State Inspection Sticker Expiration Date:<lightning-input style="display: inline-block; width:155px;" type="Date"  data-field="State_Inspection_Sticker_Expiration_Date__c" value={StateInspectionStickerExpirationDate} onchange={handleInputChange}></lightning-input>
+                            <div> State Inspection Sticker Expiration Date:<lightning-input style="display: inline-block; width:155px;" type="Date"  data-field="State_Inspection_Sticker_Expiration_Date__c" value={fields.State_Inspection_Sticker_Expiration_Date__c} onchange={handleInputChange}></lightning-input>
                             </div>
                         </div>
                     
@@ -2906,7 +2906,7 @@
         data-field="Comments__c"
         oninput={handleInputChange}
         onfocus={handleAutoResize}
-    >{Commends}</textarea>
+    >{fields.Comments__c}</textarea>
 </div>
 
             
@@ -2923,8 +2923,13 @@
                 </div>
                <table class="responsive-table"> 
                 <tr> 
-                    <td style="font-size:15px"><label style="font-weight:700;">Printed Name of Maintenance Manager:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 100%;" type="text-area" data-field="Printed_Name_of_Inspector__c" value={PrintedNameOfInspector} onchange={handleInputChange}></lightning-input></td> 
-                    <td style="font-size:15px"><label style="font-weight:700;">Signature of Maintenance Manager:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 100%;" type="text" data-field="Signature_of_Inspector__c" value={SignatureOfInspector} onchange={handleInputChange}></lightning-input></td> 
+                    <td style="font-size:15px"><label style="font-weight:700;">Printed Name of Maintenance Manager:</label>&nbsp;<lightning-input style="margin-top:-20px; width: 100%;" type="text-area" data-field="Printed_Name_of_Inspector__c" value={fields.Printed_Name_of_Inspector__c} onchange={handleInputChange}></lightning-input></td> 
+                    <td><lightning-input 
+                        type="checkbox" 
+                        label="Add maintanence Manager Signature" 
+                        checked={isSignatureAddedMaintanence} 
+                        onchange={toggleSignaturePadMaintanence}>
+                    </lightning-input></td>
                 </tr> 
                 </table>
                 <p>I certify that I have reviewed this inspection report and verified its compliance with DOT regulations and company standards.</p>
@@ -2954,6 +2959,33 @@
                             <lightning-button label="Save" variant="brand" onclick={saveSignature}></lightning-button>
                             <lightning-button label="Clear" variant="destructive" onclick={clearSignature}></lightning-button>
                             <lightning-button label="Cancel" variant="neutral" onclick={closeSignaturePad}></lightning-button>
+                        </footer>
+                    </div>
+                </section>
+                <div class="slds-backdrop slds-backdrop_open"></div>
+            </template>
+
+            <template if:true={showSignaturePadMaintanence}>
+                <section role="dialog" class="slds-modal slds-fade-in-open">
+                    <div class="sign">
+                        <!-- Modal Header -->
+                        <header class="slds-modal__header">
+                            <h2 class="slds-text-heading_medium">Sign Here</h2>
+                        </header>
+
+                        <!-- Modal Body -->
+                        <div class="slds-modal__content slds-p-around_medium">
+                            <canvas lwc:ref="signaturePad" class="signature-pad"
+                                onmousedown={startDrawing} onmousemove={draw} onmouseup={stopDrawing}
+                                ontouchstart={startDrawing} ontouchmove={draw} ontouchend={stopDrawing}>
+                            </canvas>
+                        </div>
+
+                        <!-- Modal Footer -->
+                        <footer class="slds-modal__footer">
+                            <lightning-button label="Save" variant="brand" onclick={saveSignatureMaintanence}></lightning-button>
+                            <lightning-button label="Clear" variant="destructive" onclick={clearSignature}></lightning-button>
+                            <lightning-button label="Cancel" variant="neutral" onclick={closeSignaturePadMaintanence}></lightning-button>
                         </footer>
                     </div>
                 </section>
