@@ -130,310 +130,82 @@ export default class PPM_Sheet extends NavigationMixin(LightningElement) {
     myImageUrl = myImage;
     @api recordId;
     @track fields = {};
-    @track shopName;
-    @track NameOfMotorCarrier;
-    @track WFSPO
-    @track date;
-    @track Mileage;
-    @track Unit;
-    @track VIN;
-    @track APM_DryService;
-    @track BPM_WetService;
-    @track InspectAirCleanersAdvise; 
-    @track GreaseFittingsFifthWheel; 
-    @track CheckFillFluids; 
-    @track AdjustBrakes; 
-    @track CheckRegularCoolant;
-    @track extentLifeCooland;
-    @track EnsureAllTiresFilled100PSI;
-    @track DCA_Reading;
-    @track ppm;
-    @track DegreeReading;
-    @track gladHands;
-    @track ServiceBrakes; 
-    @track ParkingBrake;
-    @track BrakeDrumsRotors; 
-    @track HosesSpacingChaffing; 
-    @track BrakeTubing; 
-    @track TractorProtectionValve; 
-    @track AirCompressor; 
-    @track ElectricBrakes; 
-    @track HydraulicBrakes; 
-    @track VacuumSystems;
-    @track PintleHooks; @track SaddleMounts; @track SlidingMechanism; @track FifthWheelLocksAdjustment;
-    @track Not_Leaking;
-    @track Won_t_burn;
-    @track Wipers;
-    @track WindShield;
-    @track noVisibleLeaks;
-    @track fillerCapNotMissing;
-    @track tankSecurelyAttached;
-    @track allDevices;
-    @track conspicuityTape;
-    @track protectionAgainstShiftingCargo;
-    @track conditionOfLoading;
-    @track steeringWheelFreePlay;
-    @track steeringColumn;
-    @track frontAxleBeamComponents;
-    @track steeringGearBox;
-    @track pitmanArm;
-    @track powerSteering;
-    @track ballAndSocketJoints;
-    @track tieRodsAndDragLinks;
-    @track nuts;
-    @track steeringSystem;
-    @track frameMembers
-    @track tireAndWheelClearance
-    @track adjustableAxleAssemblies
-    @track damageCheck
-    @track electricalInspection
-    @track boxSkinCondition
-    @track uBoltsTorque50lbFt
-    @track inspectWeldsForCracking
-    @track doorRollerInspectionAndLubrication
-    @track hingeInspectionAndLubrication
-    @track doorOperationSealsCheck
-    @track springsAirBagsHeight
-    @track springHangers
-    @track frontUBoltTorque270_360lbFt
-    @track rearUBoltTorque420_500lbFt
-    @track torqueRadiusOrTrackingComponents
-    @track InspectReplaceCabinAirFilter
-    @track lockOrSideRing;
-    @track welds;
-    @track wheelsAndRims;
-    @track studsAndLugNuts;
-    @track wheelBearings;
-    @track axleSeals;
-    @track mudflaps;
-    @track triangles;
-    @track extinguisher;
-    @track placardsHolders;
-    @track horn;
-    @track steeringAxle;
-    @track allOtherTires;
-    @track completed;
-    @track Does_theDOT_InspectionDecalExpire;
-    @track CompletedDOT_Inspection;
-    @track DOT_InspectionStickerExpirationDate;
-    @track DoestheStateInspectionDecalExpire;
-    @track CompletedStateInspection;
-    @track StateInspectionStickerExpirationDate;
-    @track Commends;
-    @track DigitalSignature;
-    @track PrintedNameOfInspector;
-    @track SignatureOfInspector;
-
-    @track lfTires;
-    @track lfBrakes;
-    @track lfoTires;
-    @track lfoBrakes;
-    @track lfiTires;
-    @track lfiBrakes;
-    @track lroTires;
-    @track lroBrakes;
-    @track lriTires;
-    @track lriBrakes;
-
-    @track rfTires;
-    @track rfBrakes;
-    @track rfoTires;
-    @track rfoBrakes;
-    @track rfiTiers;
-    @track rfiBreaks;
-    @track rroTires;
-    @track rroBreaks;
-    @track rriTires;
-    @track rriBrakes;
 
     @wire(getRecord, { recordId: '$recordId', fields: FIELDS })
     loadRecord({ error, data }) {
         console.log('value========='+this.recordId);
         if (data) {
-            this.shopName = data.fields.Shop_Name__c.value;
-            this.NameOfMotorCarrier = data.fields.Name_Of_Motor_Carrier__c.value;
-            this.date = data.fields.Date__c.value;
-            this.WFSPO = data.fields.WFS_PO__c.value;
-            this.Mileage = data.fields.Mileage__c.value;
-            this.Unit = data.fields.Unit__c.value;
-            this.VIN = data.fields.VIN__c.value;
-            this.APM_DryService = data.fields.APM_Dry_Service__c.value;
-            this.BPM_WetService = data.fields.BPM_Wet_Service__c.value;
-            this.InspectAirCleanersAdvise = data.fields.Inspect_Air_Cleaners_and_Advise__c.value;
-            this.GreaseFittingsFifthWheel = data.fields.Grease_All_Fittings_and_Fifth_Wheel__c.value;
-            this.CheckFillFluids = data.fields.Check_and_Fill_All_Fluids__c.value;
-            this.AdjustBrakes = data.fields.Adjust_Brakes_As_Needed__c.value;
-            this.CheckRegularCoolant = data.fields.Check_Regular_Coolant__c.value;
-            this.EnsureAllTiresFilled100PSI= data.fields.Ensure_All_Tires_Are_Filled_To_100_PSI__c.value;
-            this.extentLifeCooland= data.fields.Extended_Life_Coolant_Check_FPL__c.value;
-            this.DCA_Reading = data.fields.DCA_Reading__c.value;
-            this.ppm = data.fields.ppm__c.value;
-            this.DegreeReading = data.fields.Degree_Reading__c.value;
-            this.gladHands = data.fields.Glad_Hands__c.value;
-            this.ServiceBrakes = data.fields.Service_Brakes__c.value; 
-            this.ParkingBrake = data.fields.Parking_Brake__c.value; 
-            this.BrakeDrumsRotors = data.fields.Brake_Drums_or_Rotors__c.value; 
-            this.HosesSpacingChaffing = data.fields.Hoses_Spacing_Chaffing__c.value; 
-            this.BrakeTubing = data.fields.Brake_Tubing__c.value; 
-            this.TractorProtectionValve = data.fields.Tractor_Protection_Valve__c.value; 
-            this.AirCompressor = data.fields.Air_Compressor__c.value; 
-            this.ElectricBrakes = data.fields.Electric_Brakes__c.value; 
-            this.HydraulicBrakes = data.fields.Hydraulic_Brakes__c.value; 
-            this.VacuumSystems = data.fields.Vacuum_Systems__c.value;
-            this.PintleHooks = data.fields.Pintle_Hooks__c.value; 
-            this.SaddleMounts = data.fields.Saddle_Mounts__c.value; 
-            this.SlidingMechanism = data.fields.Sliding_Mechanism__c.value; 
-            this.FifthWheelLocksAdjustment = data.fields.Fifth_Wheel_Locks_Adjustment__c.value;
-            this.Not_Leaking = data.fields.Not_Leaking__c.value;
-            this.Won_t_burn = data.fields.Won_t_burn__c.value;
-            this.Wipers = data.fields.Wipers__c.value;
-            this.WindShield = data.fields.WindShield__c.value;
-            this.noVisibleLeaks = data.fields.No_Visible_Leaks__c.value;
-            this.fillerCapNotMissing = data.fields.Filler_Cap_Not_Missing__c.value;
-            this.tankSecurelyAttached = data.fields.Tank_Securely_Attached__c.value;
-            this.allDevices = data.fields.All_Devices__c.value;
-            this.conspicuityTape = data.fields.Conspicuity_Tape__c.value;
-            this.protectionAgainstShiftingCargo = data.fields.Protection_Against_Shifting_Cargo__c.value;
-            this.conditionOfLoading = data.fields.Condition_Of_Loading__c.value;
-            this.steeringWheelFreePlay = data.fields.Steering_Wheel_Free_Play__c.value;
-            this.steeringColumn = data.fields.Steering_Column__c.value;
-            this.frontAxleBeamComponents = data.fields.Front_Axie_Beam_Components__c.value;
-            this.steeringGearBox = data.fields.Steering_Gear_Box__c.value;
-            this.pitmanArm = data.fields.Pitman_Arm__c.value;
-            this.powerSteering = data.fields.Power_Steering__c.value;
-            this.ballAndSocketJoints = data.fields.Ball_and_Socket_Joints__c.value;
-            this.tieRodsAndDragLinks = data.fields.Tie_Rods_and_Drag_Links__c.value;
-            this.nuts = data.fields.Nuts__c.value;
-            this.steeringSystem = data.fields.Steering_System__c.value;
-            this.frameMembers = data.fields.Adjustable_Axle_Assemblies__c.value;
-            this.tireAndWheelClearance = data.fields.Frame_Members__c.value;
-            this.adjustableAxleAssemblies = data.fields.Tire_and_Wheel_Clearance__c.value;
-            this.damageCheck = data.fields.Damage__c.value;
-            this.electricalInspection = data.fields.Electrical__c.value;
-            this.boxSkinCondition = data.fields.Box_Skin__c.value;
-            this.uBoltsTorque50lbFt = data.fields.U_Bolts_Torque_50_llb_ft__c.value;
-            this.inspectWeldsForCracking = data.fields.Inspect_Welds_For_Cracking__c.value;
-            this.doorRollerInspectionAndLubrication = data.fields.Door_Roller_Inspect_and_Lube__c.value;
-            this.hingeInspectionAndLubrication = data.fields.Hinge_Inspect_and_Lube__c.value;
-            this.doorOperationSealsCheck = data.fields.Door_Operation_Seals__c.value;
-            this.springsAirBagsHeight = data.fields.Springs_Air_Bags_Height__c.value;
-            this.springHangers = data.fields.Spring_Hangers__c.value;
-            this.frontUBoltTorque270_360lbFt = data.fields.Front_U_Bolt_Torque_270_360_lb_ft__c.value;
-            this.rearUBoltTorque420_500lbFt = data.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c.value;
-            this.torqueRadiusOrTrackingComponents = data.fields.Torque_Radius_or_Tracking_Components__c.value;
-            this.InspectReplaceCabinAirFilter = data.fields.Inspect_Replace_Cabin_Air_Filter__c.value;
-            this.lockOrSideRing = data.fields.Lock_or_Side_Ring__c.value;
-            this.welds = data.fields.Welds__c.value;
-            this.wheelsAndRims = data.fields.Wheels_and_Rims__c.value;
-            this.studsAndLugNuts = data.fields.Studs_and_Lug_Nuts__c.value;
-            this.wheelBearings = data.fields.Wheel_Bearings__c.value;
-            this.axleSeals = data.fields.Axle_Seals__c.value;
-            this.mudflaps = data.fields.Mudflaps__c.value;
-            this.triangles = data.fields.Triangles__c.value;
-            this.extinguisher = data.fields.Extinguisher__c.value;
-            this.placardsHolders = data.fields.Placards_Holders__c.value;
-            this.horn = data.fields.Horn__c.value;
-            this.steeringAxle = data.fields.Steering_Axle__c.value;
-            this.allOtherTires = data.fields.All_Other_Tires__c.value;
-            this.completed = data.fields.Completed__c.value;
-            this.Does_theDOT_InspectionDecalExpire = data.fields.Does_the_DOT_Inspection_Decal_Expire__c.value;
-            this.CompletedDOT_Inspection = data.fields.Completed_DOT_Inspection__c.value;
-            this.DOT_InspectionStickerExpirationDate = data.fields.DOT_Inspection_Expiration_Date__c.value;
-            this.DoestheStateInspectionDecalExpire = data.fields.Does_the_State_Inspection_Decal_Expire__c.value;
-            this.CompletedStateInspection = data.fields.Completed_State_Inspection__c.value;
-            this.StateInspectionStickerExpirationDate = data.fields.State_Inspection_Sticker_Expiration_Date__c.value;
-            this.Commends = data.fields.Comments__c.value;
-            this.DigitalSignature = data.fields.Digital_Signature__c.value;
-            this.PrintedNameOfInspector = data.fields.Printed_Name_of_Inspector__c.value;
-            this.SignatureOfInspector = data.fields.Signature_of_Inspector__c.value;
-
-            this.lfTires = data.fields.LF_Tires__c.value;
-            this.lfBrakes = data.fields.LF_Brakes__c.value;
-            this.lfoTires = data.fields.LFO_Tires__c.value;
-            this.lfoBrakes = data.fields.LFO_Brakes__c.value;
-            this.lfiTires = data.fields.LFI_Tires__c.value;
-            this.lfiBrakes = data.fields.LFI_Brakes__c.value;
-            this.lroTires = data.fields.LRO_Tires__c.value;
-            this.lroBrakes = data.fields.LRO_Brakes__c.value;
-            this.lriTires = data.fields.LRI_Tires__c.value;
-            this.lriBrakes = data.fields.LRI_Brakes__c.value;
-
-            this.rfTires = data.fields.RF_Tires__c.value;
-            this.rfBrakes = data.fields.RF_Brakes__c.value;
-            this.rfoTires = data.fields.RFO_Tires__c.value;
-            this.rfoBrakes = data.fields.RFO_Brakes__c.value;
-            this.rfiTiers = data.fields.RFI_Tiers__c.value;
-            this.rfiBreaks = data.fields.RFI_Breaks__c.value;
-            this.rroTires = data.fields.RRO_Tires__c.value;
-            this.rroBreaks = data.fields.RRO_Breaks__c.value;
-            this.rriTires = data.fields.RRI_Tires__c.value;
-            this.rriBrakes = data.fields.RRI_Brakes__c.value;
-
-
-
+            this.fields = Object.fromEntries(
+                Object.entries(data.fields).map(([key, value]) => [key, value.value])
+            );
         } else if (error) {
             console.error("Error fetching record data: ", error);
         }
     }
     
     get apmImage() {
-        return this.APM_DryService
+        return this.fields.APM_Dry_Service__c
             ? '/resource/Checkbox_With_Tick' 
             : '/resource/Checkbox_Without_Tick';
     }
     get bpmImage() {
-        return  this.BPM_WetService
+        return  this.fields.BPM_Wet_Service__c
             ? '/resource/Checkbox_With_Tick' 
             : '/resource/Checkbox_Without_Tick';
     }
     get airCleanerImage() { 
-        return this.InspectAirCleanersAdvise 
+        return this.fields.Inspect_Air_Cleaners_and_Advise__c 
         ? '/resource/Checkbox_With_Tick' 
         : '/resource/Checkbox_Without_Tick'; 
     }
     get greaseFittingsImage() {
-         return this.GreaseFittingsFifthWheel 
+         return this.fields.Grease_All_Fittings_and_Fifth_Wheel__c 
          ? 
          '/resource/Checkbox_With_Tick' : 
          '/resource/Checkbox_Without_Tick'; 
     } 
     get fillFluidsImage() {
-         return this.CheckFillFluids 
+         return this.fields.Check_and_Fill_All_Fluids__c 
          ? '/resource/Checkbox_With_Tick' : 
          '/resource/Checkbox_Without_Tick'; 
     } 
     get adjustBrakesImage() {
-         return this.AdjustBrakes 
+         return this.fields.Adjust_Brakes_As_Needed__c 
          ? '/resource/Checkbox_With_Tick' 
          : '/resource/Checkbox_Without_Tick'; 
     } 
     get coolantImage() { 
-        return this.CheckRegularCoolant 
+        return this.fields.Check_Regular_Coolant__c 
         ? '/resource/Checkbox_With_Tick' 
         : '/resource/Checkbox_Without_Tick';
     }
     get extentLifeCoolandimg(){
-        return this.extentLifeCooland 
+        return this.fields.Extended_Life_Coolant_Check_FPL__c 
         ? '/resource/Checkbox_With_Tick' 
         : '/resource/Checkbox_Without_Tick';
     }
     get EnsureAllTiresFilled100PSImage(){
-        return this.EnsureAllTiresFilled100PSI 
+        return this.fields.Ensure_All_Tires_Are_Filled_To_100_PSI__c 
         ? '/resource/Checkbox_With_Tick' 
         : '/resource/Checkbox_Without_Tick';
     }
     get CompletedDOT_InspectionImg(){
-        return this.CompletedDOT_Inspection
+        return this.fields.Completed_DOT_Inspection__c
         ? '/resource/Checkbox_With_Tick' 
         : '/resource/Checkbox_Without_Tick';
     }
     get CompletedStateInspectionImg(){
-        return this.CompletedStateInspection
+        return this.fields.Completed_State_Inspection__c
         ? '/resource/Checkbox_With_Tick' 
         : '/resource/Checkbox_Without_Tick';
     }
     get DigitalSignatureImg() {
-        return this.DigitalSignature
+        return this.fields.Digital_Signature__c
+            ? '/resource/Checkbox_With_Tick' 
+            : '/resource/Checkbox_Without_Tick';
+    }
+    get MaintanenceDigitalSignatureImg() {
+        return this.fields.Signature_of_Inspector__c
             ? '/resource/Checkbox_With_Tick' 
             : '/resource/Checkbox_Without_Tick';
     }
@@ -443,334 +215,326 @@ export default class PPM_Sheet extends NavigationMixin(LightningElement) {
     }
 
 // Use helper method for all getters
-    get gladHandsPassImg() { return this.getCheckboxImage(this.gladHands, 'Pass'); }
-    get gladHandsFailImg() { return this.getCheckboxImage(this.gladHands, 'Fail'); }
-    get gladHandsNaImg() { return this.getCheckboxImage(this.gladHands, 'Not Applicable'); }
+    get gladHandsPassImg() { return this.getCheckboxImage(this.fields.Glad_Hands__c, 'Pass'); }
+    get gladHandsFailImg() { return this.getCheckboxImage(this.fields.Glad_Hands__c, 'Fail'); }
+    get gladHandsNaImg() { return this.getCheckboxImage(this.fields.Glad_Hands__c, 'Not Applicable'); }
 
-    get serviceBrakesPassImg() { return this.getCheckboxImage(this.ServiceBrakes, 'Pass'); }
-    get serviceBrakesFailImg() { return this.getCheckboxImage(this.ServiceBrakes, 'Fail'); }
-    get serviceBrakesNaImg() { return this.getCheckboxImage(this.ServiceBrakes, 'Not Applicable'); }
+    get serviceBrakesPassImg() { return this.getCheckboxImage(this.fields.Service_Brakes__c, 'Pass'); }
+    get serviceBrakesFailImg() { return this.getCheckboxImage(this.fields.Service_Brakes__c, 'Fail'); }
+    get serviceBrakesNaImg() { return this.getCheckboxImage(this.fields.Service_Brakes__c, 'Not Applicable'); }
 
-    get parkingBrakePassImg() { return this.getCheckboxImage(this.ParkingBrake, 'Pass'); }
-    get parkingBrakeFailImg() { return this.getCheckboxImage(this.ParkingBrake, 'Fail'); }
-    get parkingBrakeNaImg() { return this.getCheckboxImage(this.ParkingBrake, 'Not Applicable'); }
-
-    get brakeDrumsRotorsPassImg() { return this.getCheckboxImage(this.BrakeDrumsRotors, 'Pass'); }
-    get brakeDrumsRotorsFailImg() { return this.getCheckboxImage(this.BrakeDrumsRotors, 'Fail'); }
-    get brakeDrumsRotorsNaImg() { return this.getCheckboxImage(this.BrakeDrumsRotors, 'Not Applicable'); }
+    get brakeDrumsRotorsPassImg() { return this.getCheckboxImage(this.fields.Brake_Drums_or_Rotors__c, 'Pass'); }
+    get brakeDrumsRotorsFailImg() { return this.getCheckboxImage(this.fields.Brake_Drums_or_Rotors__c, 'Fail'); }
+    get brakeDrumsRotorsNaImg() { return this.getCheckboxImage(this.fields.Brake_Drums_or_Rotors__c, 'Not Applicable'); }
     
-    get parkingBrakePassImg() { return this.getCheckboxImage(this.ParkingBrake, 'Pass'); }
-    get parkingBrakeFailImg() { return this.getCheckboxImage(this.ParkingBrake, 'Fail'); }
-    get parkingBrakeNaImg() { return this.getCheckboxImage(this.ParkingBrake, 'Not Applicable'); }
+    get parkingBrakePassImg() { return this.getCheckboxImage(this.fields.Parking_Brake__c, 'Pass'); }
+    get parkingBrakeFailImg() { return this.getCheckboxImage(this.fields.Parking_Brake__c, 'Fail'); }
+    get parkingBrakeNaImg() { return this.getCheckboxImage(this.fields.Parking_Brake__c, 'Not Applicable'); }
 
-    get brakeDrumsRotorsPassImg() { return this.getCheckboxImage(this.BrakeDrumsRotors, 'Pass'); }
-    get brakeDrumsRotorsFailImg() { return this.getCheckboxImage(this.BrakeDrumsRotors, 'Fail'); }
-    get brakeDrumsRotorsNaImg() { return this.getCheckboxImage(this.BrakeDrumsRotors, 'Not Applicable'); }
+    get hosesSpacingChaffingPassImg() { return this.getCheckboxImage(this.fields.Hoses_Spacing_Chaffing__c, 'Pass'); }
+    get hosesSpacingChaffingFailImg() { return this.getCheckboxImage(this.fields.Hoses_Spacing_Chaffing__c, 'Fail'); }
+    get hosesSpacingChaffingNaImg() { return this.getCheckboxImage(this.fields.Hoses_Spacing_Chaffing__c, 'Not Applicable'); }
 
-    get hosesSpacingChaffingPassImg() { return this.getCheckboxImage(this.HosesSpacingChaffing, 'Pass'); }
-    get hosesSpacingChaffingFailImg() { return this.getCheckboxImage(this.HosesSpacingChaffing, 'Fail'); }
-    get hosesSpacingChaffingNaImg() { return this.getCheckboxImage(this.HosesSpacingChaffing, 'Not Applicable'); }
+    get brakeTubingPassImg() { return this.getCheckboxImage(this.fields.Brake_Tubing__c, 'Pass'); }
+    get brakeTubingFailImg() { return this.getCheckboxImage(this.fields.Brake_Tubing__c, 'Fail'); }
+    get brakeTubingNaImg() { return this.getCheckboxImage(this.fields.Brake_Tubing__c, 'Not Applicable'); }
 
-    get brakeTubingPassImg() { return this.getCheckboxImage(this.BrakeTubing, 'Pass'); }
-    get brakeTubingFailImg() { return this.getCheckboxImage(this.BrakeTubing, 'Fail'); }
-    get brakeTubingNaImg() { return this.getCheckboxImage(this.BrakeTubing, 'Not Applicable'); }
+    get tractorProtectionValvePassImg() { return this.getCheckboxImage(this.fields.Tractor_Protection_Valve__c, 'Pass'); }
+    get tractorProtectionValveFailImg() { return this.getCheckboxImage(this.fields.Tractor_Protection_Valve__c, 'Fail'); }
+    get tractorProtectionValveNaImg() { return this.getCheckboxImage(this.fields.Tractor_Protection_Valve__c, 'Not Applicable'); }
 
-    get tractorProtectionValvePassImg() { return this.getCheckboxImage(this.TractorProtectionValve, 'Pass'); }
-    get tractorProtectionValveFailImg() { return this.getCheckboxImage(this.TractorProtectionValve, 'Fail'); }
-    get tractorProtectionValveNaImg() { return this.getCheckboxImage(this.TractorProtectionValve, 'Not Applicable'); }
+    get airCompressorPassImg() { return this.getCheckboxImage(this.fields.Air_Compressor__c, 'Pass'); }
+    get airCompressorFailImg() { return this.getCheckboxImage(this.fields.Air_Compressor__c, 'Fail'); }
+    get airCompressorNaImg() { return this.getCheckboxImage(this.fields.Air_Compressor__c, 'Not Applicable'); }
 
-    get airCompressorPassImg() { return this.getCheckboxImage(this.AirCompressor, 'Pass'); }
-    get airCompressorFailImg() { return this.getCheckboxImage(this.AirCompressor, 'Fail'); }
-    get airCompressorNaImg() { return this.getCheckboxImage(this.AirCompressor, 'Not Applicable'); }
+    get electricBrakesPassImg() { return this.getCheckboxImage(this.fields.Electric_Brakes__c, 'Pass'); }
+    get electricBrakesFailImg() { return this.getCheckboxImage(this.fields.Electric_Brakes__c, 'Fail'); }
+    get electricBrakesNaImg() { return this.getCheckboxImage(this.fields.Electric_Brakes__c, 'Not Applicable'); }
 
-    get electricBrakesPassImg() { return this.getCheckboxImage(this.ElectricBrakes, 'Pass'); }
-    get electricBrakesFailImg() { return this.getCheckboxImage(this.ElectricBrakes, 'Fail'); }
-    get electricBrakesNaImg() { return this.getCheckboxImage(this.ElectricBrakes, 'Not Applicable'); }
+    get hydraulicBrakesPassImg() { return this.getCheckboxImage(this.fields.Hydraulic_Brakes__c, 'Pass'); }
+    get hydraulicBrakesFailImg() { return this.getCheckboxImage(this.fields.Hydraulic_Brakes__c, 'Fail'); }
+    get hydraulicBrakesNaImg() { return this.getCheckboxImage(this.fields.Hydraulic_Brakes__c, 'Not Applicable'); }
 
-    get hydraulicBrakesPassImg() { return this.getCheckboxImage(this.HydraulicBrakes, 'Pass'); }
-    get hydraulicBrakesFailImg() { return this.getCheckboxImage(this.HydraulicBrakes, 'Fail'); }
-    get hydraulicBrakesNaImg() { return this.getCheckboxImage(this.HydraulicBrakes, 'Not Applicable'); }
-
-    get vacuumSystemsPassImg() { return this.getCheckboxImage(this.VacuumSystems, 'Pass'); }
-    get vacuumSystemsFailImg() { return this.getCheckboxImage(this.VacuumSystems, 'Fail'); }
-    get vacuumSystemsNaImg() { return this.getCheckboxImage(this.VacuumSystems, 'Not Applicable'); }
+    get vacuumSystemsPassImg() { return this.getCheckboxImage(this.fields.Vacuum_Systems__c, 'Pass'); }
+    get vacuumSystemsFailImg() { return this.getCheckboxImage(this.fields.Vacuum_Systems__c, 'Fail'); }
+    get vacuumSystemsNaImg() { return this.getCheckboxImage(this.fields.Vacuum_Systems__c, 'Not Applicable'); }
 
     
     /*-----------------------------------------breaks ends--------------------------*/
 
-    get pintleHooksPassImg() { return this.getCheckboxImage(this.PintleHooks, 'Pass'); }
-    get pintleHooksFailImg() { return this.getCheckboxImage(this.PintleHooks, 'Fail'); }
-    get pintleHooksNaImg() { return this.getCheckboxImage(this.PintleHooks, 'Not Applicable'); }
+    get pintleHooksPassImg() { return this.getCheckboxImage(this.fields.Pintle_Hooks__c, 'Pass'); }
+    get pintleHooksFailImg() { return this.getCheckboxImage(this.fields.Pintle_Hooks__c, 'Fail'); }
+    get pintleHooksNaImg() { return this.getCheckboxImage(this.fields.Pintle_Hooks__c, 'Not Applicable'); }
 
-    get saddleMountsPassImg() { return this.getCheckboxImage(this.SaddleMounts, 'Pass'); }
-    get saddleMountsFailImg() { return this.getCheckboxImage(this.SaddleMounts, 'Fail'); }
-    get saddleMountsNaImg() { return this.getCheckboxImage(this.SaddleMounts, 'Not Applicable'); }
+    get saddleMountsPassImg() { return this.getCheckboxImage(this.fields.Saddle_Mounts__c, 'Pass'); }
+    get saddleMountsFailImg() { return this.getCheckboxImage(this.fields.Saddle_Mounts__c, 'Fail'); }
+    get saddleMountsNaImg() { return this.getCheckboxImage(this.fields.Saddle_Mounts__c, 'Not Applicable'); }
 
-    get slidingMechanismPassImg() { return this.getCheckboxImage(this.SlidingMechanism, 'Pass'); }
-    get slidingMechanismFailImg() { return this.getCheckboxImage(this.SlidingMechanism, 'Fail'); }
-    get slidingMechanismNaImg() { return this.getCheckboxImage(this.SlidingMechanism, 'Not Applicable'); }
+    get slidingMechanismPassImg() { return this.getCheckboxImage(this.fields.Sliding_Mechanism__c, 'Pass'); }
+    get slidingMechanismFailImg() { return this.getCheckboxImage(this.fields.Sliding_Mechanism__c, 'Fail'); }
+    get slidingMechanismNaImg() { return this.getCheckboxImage(this.fields.Sliding_Mechanism__c, 'Not Applicable'); }
 
-    get fifthWheelLocksPassImg() { return this.getCheckboxImage(this.FifthWheelLocksAdjustment, 'Pass'); }
-    get fifthWheelLocksFailImg() { return this.getCheckboxImage(this.FifthWheelLocksAdjustment, 'Fail'); }
-    get fifthWheelLocksNaImg() { return this.getCheckboxImage(this.FifthWheelLocksAdjustment, 'Not Applicable'); }
+    get fifthWheelLocksPassImg() { return this.getCheckboxImage(this.fields.Fifth_Wheel_Locks_Adjustment__c, 'Pass'); }
+    get fifthWheelLocksFailImg() { return this.getCheckboxImage(this.fields.Fifth_Wheel_Locks_Adjustment__c, 'Fail'); }
+    get fifthWheelLocksNaImg() { return this.getCheckboxImage(this.fields.Fifth_Wheel_Locks_Adjustment__c, 'Not Applicable'); }
 
    
    /*----------------------------------------coupling tools ends--------------------------*/
 
-    get notLeakingPassImg() { return this.getCheckboxImage(this.Not_Leaking, 'Pass'); }
-    get notLeakingFailImg() { return this.getCheckboxImage(this.Not_Leaking, 'Fail'); }
-    get notLeakingNaImg() { return this.getCheckboxImage(this.Not_Leaking, 'Not Applicable'); }
+    get notLeakingPassImg() { return this.getCheckboxImage(this.fields.Not_Leaking__c, 'Pass'); }
+    get notLeakingFailImg() { return this.getCheckboxImage(this.fields.Not_Leaking__c, 'Fail'); }
+    get notLeakingNaImg() { return this.getCheckboxImage(this.fields.Not_Leaking__c, 'Not Applicable'); }
 
-    get wontBurnPassImg() { return this.getCheckboxImage(this.Won_t_burn, 'Pass'); }
-    get wontBurnFailImg() { return this.getCheckboxImage(this.Won_t_burn, 'Fail'); }
-    get wontBurnNaImg() { return this.getCheckboxImage(this.Won_t_burn, 'Not Applicable'); }
+    get wontBurnPassImg() { return this.getCheckboxImage(this.fields.Won_t_burn__c, 'Pass'); }
+    get wontBurnFailImg() { return this.getCheckboxImage(this.fields.Won_t_burn__c, 'Fail'); }
+    get wontBurnNaImg() { return this.getCheckboxImage(this.fields.Won_t_burn__c, 'Not Applicable'); }
 
 
  /*----------------------------------------EXHAUST SYSTEM ends--------------------------*/
 
-    get wipersPassImg() { return this.getCheckboxImage(this.Wipers, 'Pass'); }
-    get wipersFailImg() { return this.getCheckboxImage(this.Wipers, 'Fail'); }
-    get wipersNaImg() { return this.getCheckboxImage(this.Wipers, 'Not Applicable'); }
+    get wipersPassImg() { return this.getCheckboxImage(this.fields.Wipers__c, 'Pass'); }
+    get wipersFailImg() { return this.getCheckboxImage(this.fields.Wipers__c, 'Fail'); }
+    get wipersNaImg() { return this.getCheckboxImage(this.fields.Wipers__c, 'Not Applicable'); }
 
-    get windShieldPassImg() { return this.getCheckboxImage(this.WindShield, 'Pass'); }
-    get windShieldFailImg() { return this.getCheckboxImage(this.WindShield, 'Fail'); }
-    get windShieldNaImg() { return this.getCheckboxImage(this.WindShield, 'Not Applicable'); }
+    get windShieldPassImg() { return this.getCheckboxImage(this.fields.WindShield__c, 'Pass'); }
+    get windShieldFailImg() { return this.getCheckboxImage(this.fields.WindShield__c, 'Fail'); }
+    get windShieldNaImg() { return this.getCheckboxImage(this.fields.WindShield__c, 'Not Applicable'); }
 
 
  /*----------------------------------------Winshild,wiper ends--------------------------*/
 
-    get noVisibleLeaksPassImg() { return this.getCheckboxImage(this.noVisibleLeaks, 'Pass'); }
-    get noVisibleLeaksFailImg() { return this.getCheckboxImage(this.noVisibleLeaks, 'Fail'); }
-    get noVisibleLeaksNaImg() { return this.getCheckboxImage(this.noVisibleLeaks, 'Not Applicable'); }
+    get noVisibleLeaksPassImg() { return this.getCheckboxImage(this.fields.No_Visible_Leaks__c, 'Pass'); }
+    get noVisibleLeaksFailImg() { return this.getCheckboxImage(this.fields.No_Visible_Leaks__c, 'Fail'); }
+    get noVisibleLeaksNaImg() { return this.getCheckboxImage(this.fields.No_Visible_Leaks__c, 'Not Applicable'); }
 
-    get fillerCapNotMissingPassImg() { return this.getCheckboxImage(this.fillerCapNotMissing, 'Pass'); }
-    get fillerCapNotMissingFailImg() { return this.getCheckboxImage(this.fillerCapNotMissing, 'Fail'); }
-    get fillerCapNotMissingNaImg() { return this.getCheckboxImage(this.fillerCapNotMissing, 'Not Applicable'); }
+    get fillerCapNotMissingPassImg() { return this.getCheckboxImage(this.fields.Filler_Cap_Not_Missing__c, 'Pass'); }
+    get fillerCapNotMissingFailImg() { return this.getCheckboxImage(this.fields.Filler_Cap_Not_Missing__c, 'Fail'); }
+    get fillerCapNotMissingNaImg() { return this.getCheckboxImage(this.fields.Filler_Cap_Not_Missing__c, 'Not Applicable'); }
 
-    get tankSecurelyAttachedPassImg() { return this.getCheckboxImage(this.tankSecurelyAttached, 'Pass'); }
-    get tankSecurelyAttachedFailImg() { return this.getCheckboxImage(this.tankSecurelyAttached, 'Fail'); }
-    get tankSecurelyAttachedNaImg() { return this.getCheckboxImage(this.tankSecurelyAttached, 'Not Applicable'); }
+    get tankSecurelyAttachedPassImg() { return this.getCheckboxImage(this.fields.Tank_Securely_Attached__c, 'Pass'); }
+    get tankSecurelyAttachedFailImg() { return this.getCheckboxImage(this.fields.Tank_Securely_Attached__c, 'Fail'); }
+    get tankSecurelyAttachedNaImg() { return this.getCheckboxImage(this.fields.Tank_Securely_Attached__c, 'Not Applicable'); }
 
 
 /*----------------------------------------fuel system ends--------------------------*/
-    get allDevicesPassImg() { return this.getCheckboxImage(this.allDevices, 'Pass'); }
-    get allDevicesFailImg() { return this.getCheckboxImage(this.allDevices, 'Fail'); }
-    get allDevicesNaImg() { return this.getCheckboxImage(this.allDevices, 'Not Applicable'); }
+    get allDevicesPassImg() { return this.getCheckboxImage(this.fields.All_Devices__c, 'Pass'); }
+    get allDevicesFailImg() { return this.getCheckboxImage(this.fields.All_Devices__c, 'Fail'); }
+    get allDevicesNaImg() { return this.getCheckboxImage(this.fields.All_Devices__c, 'Not Applicable'); }
 
-    get conspicuityTapePassImg() { return this.getCheckboxImage(this.conspicuityTape, 'Pass'); }
-    get conspicuityTapeFailImg() { return this.getCheckboxImage(this.conspicuityTape, 'Fail'); }
-    get conspicuityTapeNaImg() { return this.getCheckboxImage(this.conspicuityTape, 'Not Applicable'); }
+    get conspicuityTapePassImg() { return this.getCheckboxImage(this.fields.Conspicuity_Tape__c, 'Pass'); }
+    get conspicuityTapeFailImg() { return this.getCheckboxImage(this.fields.Conspicuity_Tape__c, 'Fail'); }
+    get conspicuityTapeNaImg() { return this.getCheckboxImage(this.fields.Conspicuity_Tape__c, 'Not Applicable'); }
 
 
 /*----------------------------------------lightnig/refle ends--------------------------*/
 
-    get protectionAgainstShiftingCargoPassImg() { return this.getCheckboxImage(this.protectionAgainstShiftingCargo, 'Pass'); }
-    get protectionAgainstShiftingCargoFailImg() { return this.getCheckboxImage(this.protectionAgainstShiftingCargo, 'Fail'); }
-    get protectionAgainstShiftingCargoNaImg() { return this.getCheckboxImage(this.protectionAgainstShiftingCargo, 'Not Applicable'); }
+    get protectionAgainstShiftingCargoPassImg() { return this.getCheckboxImage(this.fields.Protection_Against_Shifting_Cargo__c, 'Pass'); }
+    get protectionAgainstShiftingCargoFailImg() { return this.getCheckboxImage(this.fields.Protection_Against_Shifting_Cargo__c, 'Fail'); }
+    get protectionAgainstShiftingCargoNaImg() { return this.getCheckboxImage(this.fields.Protection_Against_Shifting_Cargo__c, 'Not Applicable'); }
 
-    get conditionOfLoadingPassImg() { return this.getCheckboxImage(this.conditionOfLoading, 'Pass'); }
-    get conditionOfLoadingFailImg() { return this.getCheckboxImage(this.conditionOfLoading, 'Fail'); }
-    get conditionOfLoadingNaImg() { return this.getCheckboxImage(this.conditionOfLoading, 'Not Applicable'); }
+    get conditionOfLoadingPassImg() { return this.getCheckboxImage(this.fields.Condition_Of_Loading__c, 'Pass'); }
+    get conditionOfLoadingFailImg() { return this.getCheckboxImage(this.fields.Condition_Of_Loading__c, 'Fail'); }
+    get conditionOfLoadingNaImg() { return this.getCheckboxImage(this.fields.Condition_Of_Loading__c, 'Not Applicable'); }
 
 
 /*----------------------------------------safe loading ends--------------------------*/
 
-    get steeringWheelFreePlayPassImg() { return this.getCheckboxImage(this.steeringWheelFreePlay, 'Pass'); }
-    get steeringWheelFreePlayFailImg() { return this.getCheckboxImage(this.steeringWheelFreePlay, 'Fail'); }
-    get steeringWheelFreePlayNaImg() { return this.getCheckboxImage(this.steeringWheelFreePlay, 'Not Applicable'); }
+    get steeringWheelFreePlayPassImg() { return this.getCheckboxImage(this.fields.Steering_Wheel_Free_Play__c, 'Pass'); }
+    get steeringWheelFreePlayFailImg() { return this.getCheckboxImage(this.fields.Steering_Wheel_Free_Play__c, 'Fail'); }
+    get steeringWheelFreePlayNaImg() { return this.getCheckboxImage(this.fields.Steering_Wheel_Free_Play__c, 'Not Applicable'); }
 
-    get steeringColumnPassImg() { return this.getCheckboxImage(this.steeringColumn, 'Pass'); }
-    get steeringColumnFailImg() { return this.getCheckboxImage(this.steeringColumn, 'Fail'); }
-    get steeringColumnNaImg() { return this.getCheckboxImage(this.steeringColumn, 'Not Applicable'); }
+    get steeringColumnPassImg() { return this.getCheckboxImage(this.fields.Steering_Column__c, 'Pass'); }
+    get steeringColumnFailImg() { return this.getCheckboxImage(this.fields.Steering_Column__c, 'Fail'); }
+    get steeringColumnNaImg() { return this.getCheckboxImage(this.fields.Steering_Column__c, 'Not Applicable'); }
 
-    get frontAxleBeamComponentsPassImg() { return this.getCheckboxImage(this.frontAxleBeamComponents, 'Pass'); }
-    get frontAxleBeamComponentsFailImg() { return this.getCheckboxImage(this.frontAxleBeamComponents, 'Fail'); }
-    get frontAxleBeamComponentsNaImg() { return this.getCheckboxImage(this.frontAxleBeamComponents, 'Not Applicable'); }
+    get frontAxleBeamComponentsPassImg() { return this.getCheckboxImage(this.fields.Front_Axie_Beam_Components__c, 'Pass'); }
+    get frontAxleBeamComponentsFailImg() { return this.getCheckboxImage(this.fields.Front_Axie_Beam_Components__c, 'Fail'); }
+    get frontAxleBeamComponentsNaImg() { return this.getCheckboxImage(this.fields.Front_Axie_Beam_Components__c, 'Not Applicable'); }
 
-    get steeringGearBoxPassImg() { return this.getCheckboxImage(this.steeringGearBox, 'Pass'); }
-    get steeringGearBoxFailImg() { return this.getCheckboxImage(this.steeringGearBox, 'Fail'); }
-    get steeringGearBoxNaImg() { return this.getCheckboxImage(this.steeringGearBox, 'Not Applicable'); }
+    get steeringGearBoxPassImg() { return this.getCheckboxImage(this.fields.Steering_Gear_Box__c, 'Pass'); }
+    get steeringGearBoxFailImg() { return this.getCheckboxImage(this.fields.Steering_Gear_Box__c, 'Fail'); }
+    get steeringGearBoxNaImg() { return this.getCheckboxImage(this.fields.Steering_Gear_Box__c, 'Not Applicable'); }
 
-    get pitmanArmPassImg() { return this.getCheckboxImage(this.pitmanArm, 'Pass'); }
-    get pitmanArmFailImg() { return this.getCheckboxImage(this.pitmanArm, 'Fail'); }
-    get pitmanArmNaImg() { return this.getCheckboxImage(this.pitmanArm, 'Not Applicable'); }
+    get pitmanArmPassImg() { return this.getCheckboxImage(this.fields.Pitman_Arm__c, 'Pass'); }
+    get pitmanArmFailImg() { return this.getCheckboxImage(this.fields.Pitman_Arm__c, 'Fail'); }
+    get pitmanArmNaImg() { return this.getCheckboxImage(this.fields.Pitman_Arm__c, 'Not Applicable'); }
 
-    get powerSteeringPassImg() { return this.getCheckboxImage(this.powerSteering, 'Pass'); }
-    get powerSteeringFailImg() { return this.getCheckboxImage(this.powerSteering, 'Fail'); }
-    get powerSteeringNaImg() { return this.getCheckboxImage(this.powerSteering, 'Not Applicable'); }
+    get powerSteeringPassImg() { return this.getCheckboxImage(this.fields.Power_Steering__c, 'Pass'); }
+    get powerSteeringFailImg() { return this.getCheckboxImage(this.fields.Power_Steering__c, 'Fail'); }
+    get powerSteeringNaImg() { return this.getCheckboxImage(this.fields.Power_Steering__c, 'Not Applicable'); }
 
-    get ballAndSocketJointsPassImg() { return this.getCheckboxImage(this.ballAndSocketJoints, 'Pass'); }
-    get ballAndSocketJointsFailImg() { return this.getCheckboxImage(this.ballAndSocketJoints, 'Fail'); }
-    get ballAndSocketJointsNaImg() { return this.getCheckboxImage(this.ballAndSocketJoints, 'Not Applicable'); }
+    get ballAndSocketJointsPassImg() { return this.getCheckboxImage(this.fields.Ball_and_Socket_Joints__c, 'Pass'); }
+    get ballAndSocketJointsFailImg() { return this.getCheckboxImage(this.fields.Ball_and_Socket_Joints__c, 'Fail'); }
+    get ballAndSocketJointsNaImg() { return this.getCheckboxImage(this.fields.Ball_and_Socket_Joints__c, 'Not Applicable'); }
 
-    get tieRodsAndDragLinksPassImg() { return this.getCheckboxImage(this.tieRodsAndDragLinks, 'Pass'); }
-    get tieRodsAndDragLinksFailImg() { return this.getCheckboxImage(this.tieRodsAndDragLinks, 'Fail'); }
-    get tieRodsAndDragLinksNaImg() { return this.getCheckboxImage(this.tieRodsAndDragLinks, 'Not Applicable'); }
+    get tieRodsAndDragLinksPassImg() { return this.getCheckboxImage(this.fields.Tie_Rods_and_Drag_Links__c, 'Pass'); }
+    get tieRodsAndDragLinksFailImg() { return this.getCheckboxImage(this.fields.Tie_Rods_and_Drag_Links__c, 'Fail'); }
+    get tieRodsAndDragLinksNaImg() { return this.getCheckboxImage(this.fields.Tie_Rods_and_Drag_Links__c, 'Not Applicable'); }
 
-    get nutsPassImg() { return this.getCheckboxImage(this.nuts, 'Pass'); }
-    get nutsFailImg() { return this.getCheckboxImage(this.nuts, 'Fail'); }
-    get nutsNaImg() { return this.getCheckboxImage(this.nuts, 'Not Applicable'); }
+    get nutsPassImg() { return this.getCheckboxImage(this.fields.Nuts__c, 'Pass'); }
+    get nutsFailImg() { return this.getCheckboxImage(this.fields.Nuts__c, 'Fail'); }
+    get nutsNaImg() { return this.getCheckboxImage(this.fields.Nuts__c, 'Not Applicable'); }
 
-    get steeringSystemPassImg() { return this.getCheckboxImage(this.steeringSystem, 'Pass'); }
-    get steeringSystemFailImg() { return this.getCheckboxImage(this.steeringSystem, 'Fail'); }
-    get steeringSystemNaImg() { return this.getCheckboxImage(this.steeringSystem, 'Not Applicable'); }
+    get steeringSystemPassImg() { return this.getCheckboxImage(this.fields.Steering_System__c, 'Pass'); }
+    get steeringSystemFailImg() { return this.getCheckboxImage(this.fields.Steering_System__c, 'Fail'); }
+    get steeringSystemNaImg() { return this.getCheckboxImage(this.fields.Steering_System__c, 'Not Applicable'); }
 
 
 /*----------------------------------------steering mechnisun ends--------------------------*/
 
-    get frameMembersPassImg() { return this.getCheckboxImage(this.frameMembers, 'Pass'); }
-    get frameMembersFailImg() { return this.getCheckboxImage(this.frameMembers, 'Fail'); }
-    get frameMembersNaImg() { return this.getCheckboxImage(this.frameMembers, 'Not Applicable'); }
+    get frameMembersPassImg() { return this.getCheckboxImage(this.fields.Frame_Members__c, 'Pass'); }
+    get frameMembersFailImg() { return this.getCheckboxImage(this.fields.Frame_Members__c, 'Fail'); }
+    get frameMembersNaImg() { return this.getCheckboxImage(this.fields.Frame_Members__c, 'Not Applicable'); }
 
-    get tireAndWheelClearancePassImg() { return this.getCheckboxImage(this.tireAndWheelClearance, 'Pass'); }
-    get tireAndWheelClearanceFailImg() { return this.getCheckboxImage(this.tireAndWheelClearance, 'Fail'); }
-    get tireAndWheelClearanceNaImg() { return this.getCheckboxImage(this.tireAndWheelClearance, 'Not Applicable'); }
+    get tireAndWheelClearancePassImg() { return this.getCheckboxImage(this.fields.Tire_and_Wheel_Clearance__c, 'Pass'); }
+    get tireAndWheelClearanceFailImg() { return this.getCheckboxImage(this.fields.Tire_and_Wheel_Clearance__c, 'Fail'); }
+    get tireAndWheelClearanceNaImg() { return this.getCheckboxImage(this.fields.Tire_and_Wheel_Clearance__c, 'Not Applicable'); }
 
-    get adjustableAxleAssembliesPassImg() { return this.getCheckboxImage(this.adjustableAxleAssemblies, 'Pass'); }
-    get adjustableAxleAssembliesFailImg() { return this.getCheckboxImage(this.adjustableAxleAssemblies, 'Fail'); }
-    get adjustableAxleAssembliesNaImg() { return this.getCheckboxImage(this.adjustableAxleAssemblies, 'Not Applicable'); }
+    get adjustableAxleAssembliesPassImg() { return this.getCheckboxImage(this.fields.Adjustable_Axle_Assemblies__c, 'Pass'); }
+    get adjustableAxleAssembliesFailImg() { return this.getCheckboxImage(this.fields.Adjustable_Axle_Assemblies__c, 'Fail'); }
+    get adjustableAxleAssembliesNaImg() { return this.getCheckboxImage(this.fields.Adjustable_Axle_Assemblies__c, 'Not Applicable'); }
 
 
 /*----------------------------------------frame ends--------------------------*/
 
-    get damageCheckPassImg() { return this.getCheckboxImage(this.damageCheck, 'Pass'); }
-    get damageCheckFailImg() { return this.getCheckboxImage(this.damageCheck, 'Fail'); }
-    get damageCheckNaImg() { return this.getCheckboxImage(this.damageCheck, 'Not Applicable'); }
+    get damageCheckPassImg() { return this.getCheckboxImage(this.fields.Damage__c, 'Pass'); }
+    get damageCheckFailImg() { return this.getCheckboxImage(this.fields.Damage__c, 'Fail'); }
+    get damageCheckNaImg() { return this.getCheckboxImage(this.fields.Damage__c, 'Not Applicable'); }
 
-    get electricalInspectionPassImg() { return this.getCheckboxImage(this.electricalInspection, 'Pass'); }
-    get electricalInspectionFailImg() { return this.getCheckboxImage(this.electricalInspection, 'Fail'); }
-    get electricalInspectionNaImg() { return this.getCheckboxImage(this.electricalInspection, 'Not Applicable'); }
+    get electricalInspectionPassImg() { return this.getCheckboxImage(this.fields.Electrical__c, 'Pass'); }
+    get electricalInspectionFailImg() { return this.getCheckboxImage(this.fields.Electrical__c, 'Fail'); }
+    get electricalInspectionNaImg() { return this.getCheckboxImage(this.fields.Electrical__c, 'Not Applicable'); }
 
-    get boxSkinConditionPassImg() { return this.getCheckboxImage(this.boxSkinCondition, 'Pass'); }
-    get boxSkinConditionFailImg() { return this.getCheckboxImage(this.boxSkinCondition, 'Fail'); }
-    get boxSkinConditionNaImg() { return this.getCheckboxImage(this.boxSkinCondition, 'Not Applicable'); }
+    get boxSkinConditionPassImg() { return this.getCheckboxImage(this.fields.Box_Skin__c, 'Pass'); }
+    get boxSkinConditionFailImg() { return this.getCheckboxImage(this.fields.Box_Skin__c, 'Fail'); }
+    get boxSkinConditionNaImg() { return this.getCheckboxImage(this.fields.Box_Skin__c, 'Not Applicable'); }
 
-    get uBoltsTorque50lbFtPassImg() { return this.getCheckboxImage(this.uBoltsTorque50lbFt, 'Pass'); }
-    get uBoltsTorque50lbFtFailImg() { return this.getCheckboxImage(this.uBoltsTorque50lbFt, 'Fail'); }
-    get uBoltsTorque50lbFtNaImg() { return this.getCheckboxImage(this.uBoltsTorque50lbFt, 'Not Applicable'); }
+    get uBoltsTorque50lbFtPassImg() { return this.getCheckboxImage(this.fields.U_Bolts_Torque_50_llb_ft__c, 'Pass'); }
+    get uBoltsTorque50lbFtFailImg() { return this.getCheckboxImage(this.fields.U_Bolts_Torque_50_llb_ft__c, 'Fail'); }
+    get uBoltsTorque50lbFtNaImg() { return this.getCheckboxImage(this.fields.U_Bolts_Torque_50_llb_ft__c, 'Not Applicable'); }
 
-    get inspectWeldsForCrackingPassImg() { return this.getCheckboxImage(this.inspectWeldsForCracking, 'Pass'); }
-    get inspectWeldsForCrackingFailImg() { return this.getCheckboxImage(this.inspectWeldsForCracking, 'Fail'); }
-    get inspectWeldsForCrackingNaImg() { return this.getCheckboxImage(this.inspectWeldsForCracking, 'Not Applicable'); }
+    get inspectWeldsForCrackingPassImg() { return this.getCheckboxImage(this.fields.Inspect_Welds_For_Cracking__c, 'Pass'); }
+    get inspectWeldsForCrackingFailImg() { return this.getCheckboxImage(this.fields.Inspect_Welds_For_Cracking__c, 'Fail'); }
+    get inspectWeldsForCrackingNaImg() { return this.getCheckboxImage(this.fields.Inspect_Welds_For_Cracking__c, 'Not Applicable'); }
 
-    get doorRollerInspectionAndLubricationPassImg() { return this.getCheckboxImage(this.doorRollerInspectionAndLubrication, 'Pass'); }
-    get doorRollerInspectionAndLubricationFailImg() { return this.getCheckboxImage(this.doorRollerInspectionAndLubrication, 'Fail'); }
-    get doorRollerInspectionAndLubricationNaImg() { return this.getCheckboxImage(this.doorRollerInspectionAndLubrication, 'Not Applicable'); }
+    get doorRollerInspectionAndLubricationPassImg() { return this.getCheckboxImage(this.fields.Door_Roller_Inspect_and_Lube__c, 'Pass'); }
+    get doorRollerInspectionAndLubricationFailImg() { return this.getCheckboxImage(this.fields.Door_Roller_Inspect_and_Lube__c, 'Fail'); }
+    get doorRollerInspectionAndLubricationNaImg() { return this.getCheckboxImage(this.fields.Door_Roller_Inspect_and_Lube__c, 'Not Applicable'); }
 
-    get hingeInspectionAndLubricationPassImg() { return this.getCheckboxImage(this.hingeInspectionAndLubrication, 'Pass'); }
-    get hingeInspectionAndLubricationFailImg() { return this.getCheckboxImage(this.hingeInspectionAndLubrication, 'Fail'); }
-    get hingeInspectionAndLubricationNaImg() { return this.getCheckboxImage(this.hingeInspectionAndLubrication, 'Not Applicable'); }
+    get hingeInspectionAndLubricationPassImg() { return this.getCheckboxImage(this.fields.Hinge_Inspect_and_Lube__c, 'Pass'); }
+    get hingeInspectionAndLubricationFailImg() { return this.getCheckboxImage(this.fields.Hinge_Inspect_and_Lube__c, 'Fail'); }
+    get hingeInspectionAndLubricationNaImg() { return this.getCheckboxImage(this.fields.Hinge_Inspect_and_Lube__c, 'Not Applicable'); }
 
-    get doorOperationSealsCheckPassImg() { return this.getCheckboxImage(this.doorOperationSealsCheck, 'Pass'); }
-    get doorOperationSealsCheckFailImg() { return this.getCheckboxImage(this.doorOperationSealsCheck, 'Fail'); }
-    get doorOperationSealsCheckNaImg() { return this.getCheckboxImage(this.doorOperationSealsCheck, 'Not Applicable'); }
+    get doorOperationSealsCheckPassImg() { return this.getCheckboxImage(this.fields.Door_Operation_Seals__c, 'Pass'); }
+    get doorOperationSealsCheckFailImg() { return this.getCheckboxImage(this.fields.Door_Operation_Seals__c, 'Fail'); }
+    get doorOperationSealsCheckNaImg() { return this.getCheckboxImage(this.fields.Door_Operation_Seals__c, 'Not Applicable'); }
 
     
 /*----------------------------------------Body ends--------------------------*/
 
-    get springsAirBagsHeightPassImg() { return this.getCheckboxImage(this.springsAirBagsHeight, 'Pass'); }
-    get springsAirBagsHeightFailImg() { return this.getCheckboxImage(this.springsAirBagsHeight, 'Fail'); }
-    get springsAirBagsHeightNaImg() { return this.getCheckboxImage(this.springsAirBagsHeight, 'Not Applicable'); }
+    get springsAirBagsHeightPassImg() { return this.getCheckboxImage(this.fields.Springs_Air_Bags_Height__c, 'Pass'); }
+    get springsAirBagsHeightFailImg() { return this.getCheckboxImage(this.fields.Springs_Air_Bags_Height__c, 'Fail'); }
+    get springsAirBagsHeightNaImg() { return this.getCheckboxImage(this.fields.Springs_Air_Bags_Height__c, 'Not Applicable'); }
 
-    get springHangersPassImg() { return this.getCheckboxImage(this.springHangers, 'Pass'); }
-    get springHangersFailImg() { return this.getCheckboxImage(this.springHangers, 'Fail'); }
-    get springHangersNaImg() { return this.getCheckboxImage(this.springHangers, 'Not Applicable'); }
+    get springHangersPassImg() { return this.getCheckboxImage(this.fields.Spring_Hangers__c, 'Pass'); }
+    get springHangersFailImg() { return this.getCheckboxImage(this.fields.Spring_Hangers__c, 'Fail'); }
+    get springHangersNaImg() { return this.getCheckboxImage(this.fields.Spring_Hangers__c, 'Not Applicable'); }
 
-    get frontUBoltTorque270_360lbFtPassImg() { return this.getCheckboxImage(this.frontUBoltTorque270_360lbFt, 'Pass'); }
-    get frontUBoltTorque270_360lbFtFailImg() { return this.getCheckboxImage(this.frontUBoltTorque270_360lbFt, 'Fail'); }
-    get frontUBoltTorque270_360lbFtNaImg() { return this.getCheckboxImage(this.frontUBoltTorque270_360lbFt, 'Not Applicable'); }
+    get frontUBoltTorque270_360lbFtPassImg() { return this.getCheckboxImage(this.fields.Front_U_Bolt_Torque_270_360_lb_ft__c, 'Pass'); }
+    get frontUBoltTorque270_360lbFtFailImg() { return this.getCheckboxImage(this.fields.Front_U_Bolt_Torque_270_360_lb_ft__c, 'Fail'); }
+    get frontUBoltTorque270_360lbFtNaImg() { return this.getCheckboxImage(this.fields.Front_U_Bolt_Torque_270_360_lb_ft__c, 'Not Applicable'); }
 
-    get rearUBoltTorque420_500lbFtPassImg() { return this.getCheckboxImage(this.rearUBoltTorque420_500lbFt, 'Pass'); }
-    get rearUBoltTorque420_500lbFtFailImg() { return this.getCheckboxImage(this.rearUBoltTorque420_500lbFt, 'Fail'); }
-    get rearUBoltTorque420_500lbFtNaImg() { return this.getCheckboxImage(this.rearUBoltTorque420_500lbFt, 'Not Applicable'); }
+    get rearUBoltTorque420_500lbFtPassImg() { return this.getCheckboxImage(this.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c, 'Pass'); }
+    get rearUBoltTorque420_500lbFtFailImg() { return this.getCheckboxImage(this.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c, 'Fail'); }
+    get rearUBoltTorque420_500lbFtNaImg() { return this.getCheckboxImage(this.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c, 'Not Applicable'); }
 
-    get torqueRadiusOrTrackingComponentsPassImg() { return this.getCheckboxImage(this.torqueRadiusOrTrackingComponents, 'Pass'); }
-    get torqueRadiusOrTrackingComponentsFailImg() { return this.getCheckboxImage(this.torqueRadiusOrTrackingComponents, 'Fail'); }
-    get torqueRadiusOrTrackingComponentsNaImg() { return this.getCheckboxImage(this.torqueRadiusOrTrackingComponents, 'Not Applicable'); }
+    get torqueRadiusOrTrackingComponentsPassImg() { return this.getCheckboxImage(this.fields.Torque_Radius_or_Tracking_Components__c, 'Pass'); }
+    get torqueRadiusOrTrackingComponentsFailImg() { return this.getCheckboxImage(this.fields.Torque_Radius_or_Tracking_Components__c, 'Fail'); }
+    get torqueRadiusOrTrackingComponentsNaImg() { return this.getCheckboxImage(this.fields.Torque_Radius_or_Tracking_Components__c, 'Not Applicable'); }
 
     
     /*------------------------------rear suspension ends------------------------------------*/
 
-        get InspectReplaceCabinAirFilterPassimg() { return this.getCheckboxImage(this.InspectReplaceCabinAirFilter, 'Pass');  } 
-    get InspectReplaceCabinAirFilterFailImg() { return this.getCheckboxImage(this.InspectReplaceCabinAirFilter, 'Fail'); }
-    get InspectReplaceCabinAirFilterNaImg() { return this.getCheckboxImage(this.InspectReplaceCabinAirFilter, 'Not Applicable'); }
+        get InspectReplaceCabinAirFilterPassimg() { return this.getCheckboxImage(this.fields.Inspect_Replace_Cabin_Air_Filter__c, 'Pass');  } 
+    get InspectReplaceCabinAirFilterFailImg() { return this.getCheckboxImage(this.fields.Inspect_Replace_Cabin_Air_Filter__c, 'Fail'); }
+    get InspectReplaceCabinAirFilterNaImg() { return this.getCheckboxImage(this.fields.Inspect_Replace_Cabin_Air_Filter__c, 'Not Applicable'); }
 
 
    /*------------------------------HVAC ends------------------------------------*/ 
 
-    get lockOrSideRingPassImg() { return this.getCheckboxImage(this.lockOrSideRing, 'Pass'); }
-    get lockOrSideRingFailImg() { return this.getCheckboxImage(this.lockOrSideRing, 'Fail'); }
-    get lockOrSideRingNaImg() { return this.getCheckboxImage(this.lockOrSideRing, 'Not Applicable'); }
+    get lockOrSideRingPassImg() { return this.getCheckboxImage(this.fields.Lock_or_Side_Ring__c, 'Pass'); }
+    get lockOrSideRingFailImg() { return this.getCheckboxImage(this.fields.Lock_or_Side_Ring__c, 'Fail'); }
+    get lockOrSideRingNaImg() { return this.getCheckboxImage(this.fields.Lock_or_Side_Ring__c, 'Not Applicable'); }
 
-    get weldsPassImg() { return this.getCheckboxImage(this.welds, 'Pass'); }
-    get weldsFailImg() { return this.getCheckboxImage(this.welds, 'Fail'); }
-    get weldsNaImg() { return this.getCheckboxImage(this.welds, 'Not Applicable'); }
+    get weldsPassImg() { return this.getCheckboxImage(this.fields.Welds__c, 'Pass'); }
+    get weldsFailImg() { return this.getCheckboxImage(this.fields.Welds__c, 'Fail'); }
+    get weldsNaImg() { return this.getCheckboxImage(this.fields.Welds__c, 'Not Applicable'); }
 
-    get wheelsAndRimsPassImg() { return this.getCheckboxImage(this.wheelsAndRims, 'Pass'); }
-    get wheelsAndRimsFailImg() { return this.getCheckboxImage(this.wheelsAndRims, 'Fail'); }
-    get wheelsAndRimsNaImg() { return this.getCheckboxImage(this.wheelsAndRims, 'Not Applicable'); }
+    get wheelsAndRimsPassImg() { return this.getCheckboxImage(this.fields.Wheels_and_Rims__c, 'Pass'); }
+    get wheelsAndRimsFailImg() { return this.getCheckboxImage(this.fields.Wheels_and_Rims__c, 'Fail'); }
+    get wheelsAndRimsNaImg() { return this.getCheckboxImage(this.fields.Wheels_and_Rims__c, 'Not Applicable'); }
 
-    get studsAndLugNutsPassImg() { return this.getCheckboxImage(this.studsAndLugNuts, 'Pass'); }
-    get studsAndLugNutsFailImg() { return this.getCheckboxImage(this.studsAndLugNuts, 'Fail'); }
-    get studsAndLugNutsNaImg() { return this.getCheckboxImage(this.studsAndLugNuts, 'Not Applicable'); }
+    get studsAndLugNutsPassImg() { return this.getCheckboxImage(this.fields.Studs_and_Lug_Nuts__c, 'Pass'); }
+    get studsAndLugNutsFailImg() { return this.getCheckboxImage(this.fields.Studs_and_Lug_Nuts__c, 'Fail'); }
+    get studsAndLugNutsNaImg() { return this.getCheckboxImage(this.fields.Studs_and_Lug_Nuts__c, 'Not Applicable'); }
 
-    get wheelBearingsPassImg() { return this.getCheckboxImage(this.wheelBearings, 'Pass'); }
-    get wheelBearingsFailImg() { return this.getCheckboxImage(this.wheelBearings, 'Fail'); }
-    get wheelBearingsNaImg() { return this.getCheckboxImage(this.wheelBearings, 'Not Applicable'); }
+    get wheelBearingsPassImg() { return this.getCheckboxImage(this.fields.Wheel_Bearings__c, 'Pass'); }
+    get wheelBearingsFailImg() { return this.getCheckboxImage(this.fields.Wheel_Bearings__c, 'Fail'); }
+    get wheelBearingsNaImg() { return this.getCheckboxImage(this.fields.Wheel_Bearings__c, 'Not Applicable'); }
 
-    get axleSealsPassImg() { return this.getCheckboxImage(this.axleSeals, 'Pass'); }
-    get axleSealsFailImg() { return this.getCheckboxImage(this.axleSeals, 'Fail'); }
-    get axleSealsNaImg() { return this.getCheckboxImage(this.axleSeals, 'Not Applicable'); }
+    get axleSealsPassImg() { return this.getCheckboxImage(this.fields.Axle_Seals__c, 'Pass'); }
+    get axleSealsFailImg() { return this.getCheckboxImage(this.fields.Axle_Seals__c, 'Fail'); }
+    get axleSealsNaImg() { return this.getCheckboxImage(this.fields.Axle_Seals__c, 'Not Applicable'); }
 
-    get mudflapsPassImg() { return this.getCheckboxImage(this.mudflaps, 'Pass'); }
-    get mudflapsFailImg() { return this.getCheckboxImage(this.mudflaps, 'Fail'); }
-    get mudflapsNaImg() { return this.getCheckboxImage(this.mudflaps, 'Not Applicable'); }
+    get mudflapsPassImg() { return this.getCheckboxImage(this.fields.Mudflaps__c, 'Pass'); }
+    get mudflapsFailImg() { return this.getCheckboxImage(this.fields.Mudflaps__c, 'Fail'); }
+    get mudflapsNaImg() { return this.getCheckboxImage(this.fields.Mudflaps__c, 'Not Applicable'); }
 
     
     /*------------------------------Wheels and rims ends------------------------------------*/ 
 
-    get trianglesPassImg() { return this.getCheckboxImage(this.triangles, 'Pass'); }
-    get trianglesFailImg() { return this.getCheckboxImage(this.triangles, 'Fail'); }
-    get trianglesNaImg() { return this.getCheckboxImage(this.triangles, 'Not Applicable'); }
+    get trianglesPassImg() { return this.getCheckboxImage(this.fields.Triangles__c, 'Pass'); }
+    get trianglesFailImg() { return this.getCheckboxImage(this.fields.Triangles__c, 'Fail'); }
+    get trianglesNaImg() { return this.getCheckboxImage(this.fields.Triangles__c, 'Not Applicable'); }
 
-    get extinguisherPassImg() { return this.getCheckboxImage(this.extinguisher, 'Pass'); }
-    get extinguisherFailImg() { return this.getCheckboxImage(this.extinguisher, 'Fail'); }
-    get extinguisherNaImg() { return this.getCheckboxImage(this.extinguisher, 'Not Applicable'); }
+    get extinguisherPassImg() { return this.getCheckboxImage(this.fields.Extinguisher__c, 'Pass'); }
+    get extinguisherFailImg() { return this.getCheckboxImage(this.fields.Extinguisher__c, 'Fail'); }
+    get extinguisherNaImg() { return this.getCheckboxImage(this.fields.Extinguisher__c, 'Not Applicable'); }
 
-    get placardsHoldersPassImg() { return this.getCheckboxImage(this.placardsHolders, 'Pass'); }
-    get placardsHoldersFailImg() { return this.getCheckboxImage(this.placardsHolders, 'Fail'); }
-    get placardsHoldersNaImg() { return this.getCheckboxImage(this.placardsHolders, 'Not Applicable'); }
+    get placardsHoldersPassImg() { return this.getCheckboxImage(this.fields.Placards_Holders__c, 'Pass'); }
+    get placardsHoldersFailImg() { return this.getCheckboxImage(this.fields.Placards_Holders__c, 'Fail'); }
+    get placardsHoldersNaImg() { return this.getCheckboxImage(this.fields.Placards_Holders__c, 'Not Applicable'); }
 
-    get hornPassImg() { return this.getCheckboxImage(this.horn, 'Pass'); }
-    get hornFailImg() { return this.getCheckboxImage(this.horn, 'Fail'); }
-    get hornNaImg() { return this.getCheckboxImage(this.horn, 'Not Applicable'); }
+    get hornPassImg() { return this.getCheckboxImage(this.fields.Horn__c, 'Pass'); }
+    get hornFailImg() { return this.getCheckboxImage(this.fields.Horn__c, 'Fail'); }
+    get hornNaImg() { return this.getCheckboxImage(this.fields.Horn__c, 'Not Applicable'); }
 
     
     /*------------------------------safty ends------------------------------------*/ 
 
-    get steeringAxlePassImg() { return this.getCheckboxImage(this.steeringAxle, 'Pass'); }
-    get steeringAxleFailImg() { return this.getCheckboxImage(this.steeringAxle, 'Fail'); }
-    get steeringAxleNaImg() { return this.getCheckboxImage(this.steeringAxle, 'Not Applicable'); }
+    get steeringAxlePassImg() { return this.getCheckboxImage(this.fields.Steering_Axle__c, 'Pass'); }
+    get steeringAxleFailImg() { return this.getCheckboxImage(this.fields.Steering_Axle__c, 'Fail'); }
+    get steeringAxleNaImg() { return this.getCheckboxImage(this.fields.Steering_Axle__c, 'Not Applicable'); }
 
-    get allOtherTiresPassImg() { return this.getCheckboxImage(this.allOtherTires, 'Pass'); }
-    get allOtherTiresFailImg() { return this.getCheckboxImage(this.allOtherTires, 'Fail'); }
-    get allOtherTiresNaImg() { return this.getCheckboxImage(this.allOtherTires, 'Not Applicable'); }
+    get allOtherTiresPassImg() { return this.getCheckboxImage(this.fields.All_Other_Tires__c, 'Pass'); }
+    get allOtherTiresFailImg() { return this.getCheckboxImage(this.fields.All_Other_Tires__c, 'Fail'); }
+    get allOtherTiresNaImg() { return this.getCheckboxImage(this.fields.All_Other_Tires__c, 'Not Applicable'); }
  
     
 /*------------------------------tires ends------------------------------------*/ 
 
-    get completedPassImg() { return this.getCheckboxImage(this.completed, 'Pass'); }
-    get completedFailImg() { return this.getCheckboxImage(this.completed, 'Fail'); }
-    get completedNaImg() { return this.getCheckboxImage(this.completed, 'Not Applicable'); }
+    get completedPassImg() { return this.getCheckboxImage(this.fields.Completed__c, 'Pass'); }
+    get completedFailImg() { return this.getCheckboxImage(this.fields.Completed__c, 'Fail'); }
+    get completedNaImg() { return this.getCheckboxImage(this.fields.Completed__c, 'Not Applicable'); }
 
    /*------------------------------completed ends------------------------------------*/  
 
-    get Does_theDOT_InspectionDecalExpirePassImg() { return this.Does_theDOT_InspectionDecalExpire === "Yes (Complete both 'B' and 'C')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
-    get Does_theDOT_InspectionDecalExpireFailImg() { return this.Does_theDOT_InspectionDecalExpire === "No (Skip directly to 'C')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
+    get Does_theDOT_InspectionDecalExpirePassImg() { return this.fields.Does_the_DOT_Inspection_Decal_Expire__c === "Yes (Complete both 'B' and 'C')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
+    get Does_theDOT_InspectionDecalExpireFailImg() { return this.fields.Does_the_DOT_Inspection_Decal_Expire__c === "No (Skip directly to 'C')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
 
-    get DoestheStateInspectionDecalExpirePassImg() { return this.DoestheStateInspectionDecalExpire === "Yes (Complete Both 'E' and 'F')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
-    get DoestheStateInspectionDecalFailExpire() { return this.DoestheStateInspectionDecalExpire === "No (Skip directly to 'F')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
-    get DoestheStateInspectionDecalNAExpire() { return this.DoestheStateInspectionDecalExpire === 'N/A' ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
+    get DoestheStateInspectionDecalExpirePassImg() { return this.fields.Does_the_State_Inspection_Decal_Expire__c === "Yes (Complete Both 'E' and 'F')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
+    get DoestheStateInspectionDecalFailExpire() { return this.fields.Does_the_State_Inspection_Decal_Expire__c === "No (Skip directly to 'F')" ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
+    get DoestheStateInspectionDecalNAExpire() { return this.fields.Does_the_State_Inspection_Decal_Expire__c === 'N/A' ? '/resource/Checkbox_With_Tick' : '/resource/Checkbox_Without_Tick'; } 
     
     
     get airCleanersImage() {
@@ -782,6 +546,8 @@ export default class PPM_Sheet extends NavigationMixin(LightningElement) {
     isEditPage = false;
     @track isSignatureAdded = false;
     @track showSignaturePad = false;
+    @track isSignatureAddedMaintanence = false;
+    @track showSignaturePadMaintanence = false;
      signaturePad;
     drawing = false;
 
@@ -800,11 +566,32 @@ export default class PPM_Sheet extends NavigationMixin(LightningElement) {
         }
     }
 
+     toggleSignaturePadMaintanence(event) {
+        this.isSignatureAddedMaintanence = event.target.checked;
+        this.showSignaturePadMaintanence = event.target.checked;
+        if (this.showSignaturePadMaintanence) {
+            setTimeout(() => {
+                const canvas = this.template.querySelector('canvas');
+                this.signaturePad = canvas.getContext('2d');
+                this.signaturePad.fillStyle = "white";
+                this.signaturePad.fillRect(0, 0, canvas.width, canvas.height);
+                this.signaturePad.strokeStyle = "#0000ff";
+                this.signaturePad.lineWidth = 2;
+            }, 0);
+        }
+    }
+
     // Close Signature Modal
     closeSignaturePad() {
         this.showSignaturePad = false;
         this.isSignatureAdded = false;
     }
+
+    closeSignaturePadMaintanence() {
+        this.showSignaturePadMaintanence = false;
+        this.isSignatureAddedMaintanence = false;
+    }
+
 
     // Start Drawing
     startDrawing(event) {
@@ -849,6 +636,15 @@ export default class PPM_Sheet extends NavigationMixin(LightningElement) {
         this.fields['Digital_Signature__c'] = `<img src="${signatureData}" />`;
         this.showSignaturePad = false;
     }
+
+    saveSignatureMaintanence() {
+       const canvas = this.template.querySelector('canvas');
+        const signatureData = canvas.toDataURL('image/png');
+        this.fields['Signature_of_Inspector__c'] = `<img src="${signatureData}" />`;
+        this.showSignaturePadMaintanence = false;
+    }
+
+
 
     handleNavigateToEdit() {
         this.isEditPage = true;
@@ -972,499 +768,499 @@ updatePicklistField(fieldName, selectedValue) { // Update the state for the fiel
     }
     
     
-    get gladHandsPasscheck() { return this.gladHands === 'Pass'; }get gladHandsFailcheck() { return this.gladHands === 'Fail'; }get gladHandsNacheck() { return this.gladHands === 'Not Applicable'; }
-    get ServiceBrakesPasscheck() { return this.ServiceBrakes === 'Pass'; }get ServiceBrakesFailcheck() { return this.ServiceBrakes === 'Fail'; }get ServiceBrakesNacheck() { return this.ServiceBrakes === 'Not Applicable'; }
-    get parkingBrakesPasscheck() { return this.ParkingBrake === 'Pass'; }get parkingBreaksFailcheck() { return this.ParkingBrake === 'Fail'; }get parkingBrakesNacheck() { return this.ParkingBrake === 'Not Applicable'; }
-    get parkingDrumsPasscheck() { return this.BrakeDrumsRotors === 'Pass'; }get parkingDrumsFailcheck() { return this.BrakeDrumsRotors === 'Fail'; }get parkingDrumsNacheck() { return this.BrakeDrumsRotors === 'Not Applicable'; }
-    get hosesPasscheck() { return this.HosesSpacingChaffing === 'Pass'; }get hosesFailcheck() { return this.HosesSpacingChaffing === 'Fail'; }get hosesNacheck() { return this.HosesSpacingChaffing === 'Not Applicable'; }
-    get breakTubePasscheck() { return this.BrakeTubing === 'Pass'; }get breakTubeFailcheck() { return this.BrakeTubing === 'Fail'; }get breakTubeNacheck() { return this.BrakeTubing === 'Not Applicable'; }
-    get tractorProtectionValvePasscheck() { return this.TractorProtectionValve === 'Pass'; }get tractorProtectionValveFailcheck() { return this.TractorProtectionValve === 'Fail'; }get tractorProtectionValveNacheck() { return this.TractorProtectionValve === 'Not Applicable'; }
-    get airCompressorPasscheck() { return this.AirCompressor === 'Pass'; }get airCompressorFailcheck() { return this.AirCompressor === 'Fail'; }get airCompressorNacheck() { return this.AirCompressor === 'Not Applicable'; }
-    get electricBrakesPasscheck() { return this.ElectricBrakes === 'Pass'; }get electricBrakesFailcheck() { return this.ElectricBrakes === 'Fail'; }get electricBrakesNacheck() { return this.ElectricBrakes === 'Not Applicable'; }
-    get hydraulicBrakesPasscheck() { return this.HydraulicBrakes === 'Pass'; }get hydraulicBrakesFailcheck() { return this.HydraulicBrakes === 'Fail'; }get hydraulicBrakesNacheck() { return this.HydraulicBrakes === 'Not Applicable'; }
-    get vacuumSystemsPasscheck() { return this.VacuumSystems === 'Pass'; }get vacuumSystemsFailcheck() { return this.VacuumSystems === 'Fail'; }get vacuumSystemsNacheck() { return this.VacuumSystems === 'Not Applicable'; }
-    get pintleHooksPasscheck() { return this.PintleHooks === 'Pass'; }get pintleHooksFailcheck() { return this.PintleHooks === 'Fail'; }get pintleHooksNacheck() { return this.PintleHooks === 'Not Applicable'; }
-    get saddleMountsPasscheck() { return this.SaddleMounts === 'Pass'; }get saddleMountsFailcheck() { return this.SaddleMounts === 'Fail'; }get saddleMountsNacheck() { return this.SaddleMounts === 'Not Applicable'; }
-    get slidingMechanismPasscheck() { return this.SlidingMechanism === 'Pass'; }get slidingMechanismFailcheck() { return this.SlidingMechanism === 'Fail'; }get slidingMechanismNacheck() { return this.SlidingMechanism === 'Not Applicable'; }
-    get fifthWheelLocksPasscheck() { return this.FifthWheelLocksAdjustment === 'Pass'; }get fifthWheelLocksFailcheck() { return this.FifthWheelLocksAdjustment === 'Fail'; }get fifthWheelLocksNacheck() { return this.FifthWheelLocksAdjustment === 'Not Applicable'; }
-    get NotLeakingPasscheck() { return this.Not_Leaking === 'Pass'; }get NotLeakingFailcheck() { return this.Not_Leaking === 'Fail'; }get NotLeakingNacheck() { return this.Not_Leaking === 'Not Applicable'; }
-    get Won_tburnPasscheck() { return this.Won_t_burn === 'Pass'; }get Won_tburnFailcheck() { return this.Won_t_burn === 'Fail'; }get Won_tburnNacheck() { return this.Won_t_burn === 'Not Applicable'; }
-    get WipersPasscheck() { return this.Wipers === 'Pass'; }get WipersFailcheck() { return this.Wipers === 'Fail'; }get WipersNacheck() { return this.Wipers === 'Not Applicable'; }
-    get WindShieldPasscheck() { return this.WindShield === 'Pass'; }get WindShieldFailcheck() { return this.WindShield === 'Fail'; }get WindShieldNacheck() { return this.WindShield === 'Not Applicable'; }
-    get NoVisibleLeaksPasscheck() {return this.noVisibleLeaks === 'Pass';}get NoVisibleLeaksFailcheck() {return this.noVisibleLeaks === 'Fail';}get NoVisibleLeaksNacheck() {return this.noVisibleLeaks === 'Not Applicable';}
-    get FillerCapNotMissingPasscheck() {return this.fillerCapNotMissing === 'Pass';}get FillerCapNotMissingFailcheck() {return this.fillerCapNotMissing === 'Fail';}get FillerCapNotMissingNacheck() {return this.fillerCapNotMissing === 'Not Applicable';}
-    get TankSecurelyAttachedPasscheck() {return this.tankSecurelyAttached === 'Pass';}get TankSecurelyAttachedFailcheck() {return this.tankSecurelyAttached === 'Fail';}get TankSecurelyAttachedNacheck() {return this.tankSecurelyAttached === 'Not Applicable';}
+    get gladHandsPasscheck() { return this.fields.Glad_Hands__c === 'Pass'; }get gladHandsFailcheck() { return this.fields.Glad_Hands__c === 'Fail'; }get gladHandsNacheck() { return this.fields.Glad_Hands__c === 'Not Applicable'; }
+    get ServiceBrakesPasscheck() { return this.fields.Service_Brakes__c === 'Pass'; }get ServiceBrakesFailcheck() { return this.fields.Service_Brakes__c === 'Fail'; }get ServiceBrakesNacheck() { return this.fields.Service_Brakes__c === 'Not Applicable'; }
+    get parkingBrakesPasscheck() { return this.fields.Parking_Brake__c === 'Pass'; }get parkingBreaksFailcheck() { return this.fields.Parking_Brake__c === 'Fail'; }get parkingBrakesNacheck() { return this.fields.Parking_Brake__c === 'Not Applicable'; }
+    get parkingDrumsPasscheck() { return this.fields.Brake_Drums_or_Rotors__c === 'Pass'; }get parkingDrumsFailcheck() { return this.fields.Brake_Drums_or_Rotors__c === 'Fail'; }get parkingDrumsNacheck() { return this.fields.Brake_Drums_or_Rotors__c === 'Not Applicable'; }
+    get hosesPasscheck() { return this.fields.Hoses_Spacing_Chaffing__c === 'Pass'; }get hosesFailcheck() { return this.fields.Hoses_Spacing_Chaffing__c === 'Fail'; }get hosesNacheck() { return this.fields.Hoses_Spacing_Chaffing__c === 'Not Applicable'; }
+    get breakTubePasscheck() { return this.fields.Brake_Tubing__c === 'Pass'; }get breakTubeFailcheck() { return this.fields.Brake_Tubing__c === 'Fail'; }get breakTubeNacheck() { return this.fields.Brake_Tubing__c === 'Not Applicable'; }
+    get tractorProtectionValvePasscheck() { return this.fields.Tractor_Protection_Valve__c === 'Pass'; }get tractorProtectionValveFailcheck() { return this.fields.Tractor_Protection_Valve__c === 'Fail'; }get tractorProtectionValveNacheck() { return this.fields.Tractor_Protection_Valve__c === 'Not Applicable'; }
+    get airCompressorPasscheck() { return this.fields.Air_Compressor__c === 'Pass'; }get airCompressorFailcheck() { return this.fields.Air_Compressor__c === 'Fail'; }get airCompressorNacheck() { return this.fields.Air_Compressor__c === 'Not Applicable'; }
+    get electricBrakesPasscheck() { return this.fields.Electric_Brakes__c === 'Pass'; }get electricBrakesFailcheck() { return this.fields.Electric_Brakes__c === 'Fail'; }get electricBrakesNacheck() { return this.fields.Electric_Brakes__c === 'Not Applicable'; }
+    get hydraulicBrakesPasscheck() { return this.fields.Hydraulic_Brakes__c === 'Pass'; }get hydraulicBrakesFailcheck() { return this.fields.Hydraulic_Brakes__c === 'Fail'; }get hydraulicBrakesNacheck() { return this.fields.Hydraulic_Brakes__c === 'Not Applicable'; }
+    get vacuumSystemsPasscheck() { return this.fields.Vacuum_Systems__c === 'Pass'; }get vacuumSystemsFailcheck() { return this.fields.Vacuum_Systems__c === 'Fail'; }get vacuumSystemsNacheck() { return this.fields.Vacuum_Systems__c === 'Not Applicable'; }
+    get pintleHooksPasscheck() { return this.fields.Pintle_Hooks__c === 'Pass'; }get pintleHooksFailcheck() { return this.fields.Pintle_Hooks__c === 'Fail'; }get pintleHooksNacheck() { return this.fields.Pintle_Hooks__c === 'Not Applicable'; }
+    get saddleMountsPasscheck() { return this.fields.Saddle_Mounts__c === 'Pass'; }get saddleMountsFailcheck() { return this.fields.Saddle_Mounts__c === 'Fail'; }get saddleMountsNacheck() { return this.fields.Saddle_Mounts__c === 'Not Applicable'; }
+    get slidingMechanismPasscheck() { return this.fields.Sliding_Mechanism__c === 'Pass'; }get slidingMechanismFailcheck() { return this.fields.Sliding_Mechanism__c === 'Fail'; }get slidingMechanismNacheck() { return this.fields.Sliding_Mechanism__c === 'Not Applicable'; }
+    get fifthWheelLocksPasscheck() { return this.fields.Fifth_Wheel_Locks_Adjustment__c === 'Pass'; }get fifthWheelLocksFailcheck() { return this.fields.Fifth_Wheel_Locks_Adjustment__c === 'Fail'; }get fifthWheelLocksNacheck() { return this.fields.Fifth_Wheel_Locks_Adjustment__c === 'Not Applicable'; }
+    get NotLeakingPasscheck() { return this.fields.Not_Leaking__c=== 'Pass'; }get NotLeakingFailcheck() { return this.fields.Not_Leaking__c=== 'Fail'; }get NotLeakingNacheck() { return this.fields.Not_Leaking__c=== 'Not Applicable'; }
+    get Won_tburnPasscheck() { return this.fields.Won_t_burn__c === 'Pass'; }get Won_tburnFailcheck() { return this.fields.Won_t_burn__c === 'Fail'; }get Won_tburnNacheck() { return this.fields.Won_t_burn__c === 'Not Applicable'; }
+    get WipersPasscheck() { return this.fields.Wipers__c === 'Pass'; }get WipersFailcheck() { return this.fields.Wipers__c === 'Fail'; }get WipersNacheck() { return this.fields.Wipers__c === 'Not Applicable'; }
+    get WindShieldPasscheck() { return this.fields.WindShield__c === 'Pass'; }get WindShieldFailcheck() { return this.fields.WindShield__c === 'Fail'; }get WindShieldNacheck() { return this.fields.WindShield__c === 'Not Applicable'; }
+    get NoVisibleLeaksPasscheck() {return this.fields.No_Visible_Leaks__c === 'Pass';}get NoVisibleLeaksFailcheck() {return this.fields.No_Visible_Leaks__c === 'Fail';}get NoVisibleLeaksNacheck() {return this.fields.No_Visible_Leaks__c === 'Not Applicable';}
+    get FillerCapNotMissingPasscheck() {return this.fields.Filler_Cap_Not_Missing__c === 'Pass';}get FillerCapNotMissingFailcheck() {return this.fields.Filler_Cap_Not_Missing__c === 'Fail';}get FillerCapNotMissingNacheck() {return this.fields.Filler_Cap_Not_Missing__c === 'Not Applicable';}
+    get TankSecurelyAttachedPasscheck() {return this.fields.Tank_Securely_Attached__c === 'Pass';}get TankSecurelyAttachedFailcheck() {return this.fields.Tank_Securely_Attached__c === 'Fail';}get TankSecurelyAttachedNacheck() {return this.fields.Tank_Securely_Attached__c === 'Not Applicable';}
     get AllDevicesPasscheck() {
-    return this.allDevices === 'Pass';
+    return this.fields.All_Devices__c === 'Pass';
     }
     get AllDevicesFailcheck() {
-        return this.allDevices === 'Fail';
+        return this.fields.All_Devices__c === 'Fail';
     }
     get AllDevicesNacheck() {
-        return this.allDevices === 'Not Applicable';
+        return this.fields.All_Devices__c === 'Not Applicable';
     }
 
     get ConspicuityTapePasscheck() {
-        return this.conspicuityTape === 'Pass';
+        return this.fields.Conspicuity_Tape__c === 'Pass';
     }
     get ConspicuityTapeFailcheck() {
-        return this.conspicuityTape === 'Fail';
+        return this.fields.Conspicuity_Tape__c === 'Fail';
     }
     get ConspicuityTapeNacheck() {
-        return this.conspicuityTape === 'Not Applicable';
+        return this.fields.Conspicuity_Tape__c === 'Not Applicable';
     }
 
     get ProtectionAgainstShiftingCargoPasscheck() {
-    return this.protectionAgainstShiftingCargo === 'Pass';
+    return this.fields.Protection_Against_Shifting_Cargo__c === 'Pass';
     }
     get ProtectionAgainstShiftingCargoFailcheck() {
-        return this.protectionAgainstShiftingCargo === 'Fail';
+        return this.fields.Protection_Against_Shifting_Cargo__c === 'Fail';
     }
     get ProtectionAgainstShiftingCargoNacheck() {
-        return this.protectionAgainstShiftingCargo === 'Not Applicable';
+        return this.fields.Protection_Against_Shifting_Cargo__c === 'Not Applicable';
     }
 
     get ConditionOfLoadingPasscheck() {
-        return this.conditionOfLoading === 'Pass';
+        return this.fields.Condition_Of_Loading__c === 'Pass';
     }
     get ConditionOfLoadingFailcheck() {
-        return this.conditionOfLoading === 'Fail';
+        return this.fields.Condition_Of_Loading__c === 'Fail';
     }
     get ConditionOfLoadingNacheck() {
-        return this.conditionOfLoading === 'Not Applicable';
+        return this.fields.Condition_Of_Loading__c === 'Not Applicable';
     }
 
     get SteeringWheelFreePlayPasscheck() {
-    return this.steeringWheelFreePlay === 'Pass';
+    return this.fields.Steering_Wheel_Free_Play__c === 'Pass';
     }
     get SteeringWheelFreePlayFailcheck() {
-        return this.steeringWheelFreePlay === 'Fail';
+        return this.fields.Steering_Wheel_Free_Play__c === 'Fail';
     }
     get SteeringWheelFreePlayNacheck() {
-        return this.steeringWheelFreePlay === 'Not Applicable';
+        return this.fields.Steering_Wheel_Free_Play__c === 'Not Applicable';
     }
 
     get SteeringColumnPasscheck() {
-        return this.steeringColumn === 'Pass';
+        return this.fields.Steering_Column__c === 'Pass';
     }
     get SteeringColumnFailcheck() {
-        return this.steeringColumn === 'Fail';
+        return this.fields.Steering_Column__c === 'Fail';
     }
     get SteeringColumnNacheck() {
-        return this.steeringColumn === 'Not Applicable';
+        return this.fields.Steering_Column__c === 'Not Applicable';
     }
 
     get FrontAxleBeamComponentsPasscheck() {
-        return this.frontAxleBeamComponents === 'Pass';
+        return this.fields.Front_Axie_Beam_Components__c === 'Pass';
     }
     get FrontAxleBeamComponentsFailcheck() {
-        return this.frontAxleBeamComponents === 'Fail';
+        return this.fields.Front_Axie_Beam_Components__c === 'Fail';
     }
     get FrontAxleBeamComponentsNacheck() {
-        return this.frontAxleBeamComponents === 'Not Applicable';
+        return this.fields.Front_Axie_Beam_Components__c === 'Not Applicable';
     }
 
     get SteeringGearBoxPasscheck() {
-        return this.steeringGearBox === 'Pass';
+        return this.fields.Steering_Gear_Box__c === 'Pass';
     }
     get SteeringGearBoxFailcheck() {
-        return this.steeringGearBox === 'Fail';
+        return this.fields.Steering_Gear_Box__c === 'Fail';
     }
     get SteeringGearBoxNacheck() {
-        return this.steeringGearBox === 'Not Applicable';
+        return this.fields.Steering_Gear_Box__c === 'Not Applicable';
     }
 
     get PitmanArmPasscheck() {
-        return this.pitmanArm === 'Pass';
+        return this.fields.Pitman_Arm__c === 'Pass';
     }
     get PitmanArmFailcheck() {
-        return this.pitmanArm === 'Fail';
+        return this.fields.Pitman_Arm__c === 'Fail';
     }
     get PitmanArmNacheck() {
-        return this.pitmanArm === 'Not Applicable';
+        return this.fields.Pitman_Arm__c === 'Not Applicable';
     }
 
     get PowerSteeringPasscheck() {
-        return this.powerSteering === 'Pass';
+        return this.fields.Power_Steering__c === 'Pass';
     }
     get PowerSteeringFailcheck() {
-        return this.powerSteering === 'Fail';
+        return this.fields.Power_Steering__c === 'Fail';
     }
     get PowerSteeringNacheck() {
-        return this.powerSteering === 'Not Applicable';
+        return this.fields.Power_Steering__c === 'Not Applicable';
     }
 
     get BallAndSocketJointsPasscheck() {
-        return this.ballAndSocketJoints === 'Pass';
+        return this.fields.Ball_and_Socket_Joints__c === 'Pass';
     }
     get BallAndSocketJointsFailcheck() {
-        return this.ballAndSocketJoints === 'Fail';
+        return this.fields.Ball_and_Socket_Joints__c === 'Fail';
     }
     get BallAndSocketJointsNacheck() {
-        return this.ballAndSocketJoints === 'Not Applicable';
+        return this.fields.Ball_and_Socket_Joints__c === 'Not Applicable';
     }
 
     get TieRodsAndDragLinksPasscheck() {
-    return this.tieRodsAndDragLinks === 'Pass';
+    return this.fields.Tie_Rods_and_Drag_Links__c === 'Pass';
     }
     get TieRodsAndDragLinksFailcheck() {
-        return this.tieRodsAndDragLinks === 'Fail';
+        return this.fields.Tie_Rods_and_Drag_Links__c === 'Fail';
     }
     get TieRodsAndDragLinksNacheck() {
-        return this.tieRodsAndDragLinks === 'Not Applicable';
+        return this.fields.Tie_Rods_and_Drag_Links__c === 'Not Applicable';
     }
 
     get SteeringSystemPasscheck() {
-    return this.steeringSystem === 'Pass';
+    return this.fields.Steering_System__c === 'Pass';
     }
     get SteeringSystemFailcheck() {
-        return this.steeringSystem === 'Fail';
+        return this.fields.Steering_System__c === 'Fail';
     }
     get SteeringSystemNacheck() {
-        return this.steeringSystem === 'Not Applicable';
+        return this.fields.Steering_System__c === 'Not Applicable';
     }
 
     get NutsPasscheck() {
-        return this.nuts === 'Pass';
+        return this.fields.Nuts__c === 'Pass';
     }
     get NutsFailcheck() {
-        return this.nuts === 'Fail';
+        return this.fields.Nuts__c === 'Fail';
     }
     get NutsNacheck() {
-        return this.nuts === 'Not Applicable';
+        return this.fields.Nuts__c === 'Not Applicable';
     }
 
     get FrameMembersPasscheck() {
-    return this.frameMembers === 'Pass';
+    return this.fields.Frame_Members__c === 'Pass';
     }
     get FrameMembersFailcheck() {
-        return this.frameMembers === 'Fail';
+        return this.fields.Frame_Members__c === 'Fail';
     }
     get FrameMembersNacheck() {
-        return this.frameMembers === 'Not Applicable';
+        return this.fields.Frame_Members__c === 'Not Applicable';
     }
 
     get TireAndWheelClearancePasscheck() {
-        return this.tireAndWheelClearance === 'Pass';
+        return this.fields.Tire_and_Wheel_Clearance__c === 'Pass';
     }
     get TireAndWheelClearanceFailcheck() {
-        return this.tireAndWheelClearance === 'Fail';
+        return this.fields.Tire_and_Wheel_Clearance__c === 'Fail';
     }
     get TireAndWheelClearanceNacheck() {
-        return this.tireAndWheelClearance === 'Not Applicable';
+        return this.fields.Tire_and_Wheel_Clearance__c === 'Not Applicable';
     }
 
     get AdjustableAxleAssembliesPasscheck() {
-        return this.adjustableAxleAssemblies === 'Pass';
+        return this.fields.Adjustable_Axle_Assemblies__c === 'Pass';
     }
     get AdjustableAxleAssembliesFailcheck() {
-        return this.adjustableAxleAssemblies === 'Fail';
+        return this.fields.Adjustable_Axle_Assemblies__c === 'Fail';
     }
     get AdjustableAxleAssembliesNacheck() {
-        return this.adjustableAxleAssemblies === 'Not Applicable';
+        return this.fields.Adjustable_Axle_Assemblies__c === 'Not Applicable';
     }
 
     get DamagePasscheck() {
-    return this.damageCheck === 'Pass';
+    return this.fields.Damage__c === 'Pass';
     }
     get DamageFailcheck() {
-        return this.damageCheck === 'Fail';
+        return this.fields.Damage__c === 'Fail';
     }
     get DamageNacheck() {
-        return this.damageCheck === 'Not Applicable';
+        return this.fields.Damage__c === 'Not Applicable';
     }
 
     get ElectricalPasscheck() {
-        return this.electricalInspection === 'Pass';
+        return this.fields.Electrical__c === 'Pass';
     }
     get ElectricalFailcheck() {
-        return this.electricalInspection === 'Fail';
+        return this.fields.Electrical__c === 'Fail';
     }
     get ElectricalNacheck() {
-        return this.electricalInspection === 'Not Applicable';
+        return this.fields.Electrical__c === 'Not Applicable';
     }
 
     get BoxSkinPasscheck() {
-        return this.boxSkinCondition === 'Pass';
+        return this.fields.Box_Skin__c === 'Pass';
     }
     get BoxSkinFailcheck() {
-        return this.boxSkinCondition === 'Fail';
+        return this.fields.Box_Skin__c === 'Fail';
     }
     get BoxSkinNacheck() {
-        return this.boxSkinCondition === 'Not Applicable';
+        return this.fields.Box_Skin__c === 'Not Applicable';
     }
 
     get UBoltsTorquePasscheck() {
-        return this.uBoltsTorque50lbFt === 'Pass';
+        return this.fields.U_Bolts_Torque_50_llb_ft__c === 'Pass';
     }
     get UBoltsTorqueFailcheck() {
-        return this.uBoltsTorque50lbFt === 'Fail';
+        return this.fields.U_Bolts_Torque_50_llb_ft__c === 'Fail';
     }
     get UBoltsTorqueNacheck() {
-        return this.uBoltsTorque50lbFt === 'Not Applicable';
+        return this.fields.U_Bolts_Torque_50_llb_ft__c === 'Not Applicable';
     }
 
     get InspectWeldsPasscheck() {
-        return this.inspectWeldsForCracking === 'Pass';
+        return this.fields.Inspect_Welds_For_Cracking__c === 'Pass';
     }
     get InspectWeldsFailcheck() {
-        return this.inspectWeldsForCracking === 'Fail';
+        return this.fields.Inspect_Welds_For_Cracking__c === 'Fail';
     }
     get InspectWeldsNacheck() {
-        return this.inspectWeldsForCracking === 'Not Applicable';
+        return this.fields.Inspect_Welds_For_Cracking__c === 'Not Applicable';
     }
 
     get DoorRollerInspectPasscheck() {
-        return this.doorRollerInspectionAndLubrication === 'Pass';
+        return this.fields.Door_Roller_Inspect_and_Lube__c === 'Pass';
     }
     get DoorRollerInspectFailcheck() {
-        return this.doorRollerInspectionAndLubrication === 'Fail';
+        return this.fields.Door_Roller_Inspect_and_Lube__c === 'Fail';
     }
     get DoorRollerInspectNacheck() {
-        return this.doorRollerInspectionAndLubrication === 'Not Applicable';
+        return this.fields.Door_Roller_Inspect_and_Lube__c === 'Not Applicable';
     }
 
     get HingeInspectPasscheck() {
-        return this.hingeInspectionAndLubrication === 'Pass';
+        return this.fields.Hinge_Inspect_and_Lube__c === 'Pass';
     }
     get HingeInspectFailcheck() {
-        return this.hingeInspectionAndLubrication === 'Fail';
+        return this.fields.Hinge_Inspect_and_Lube__c === 'Fail';
     }
     get HingeInspectNacheck() {
-        return this.hingeInspectionAndLubrication === 'Not Applicable';
+        return this.fields.Hinge_Inspect_and_Lube__c === 'Not Applicable';
     }
 
     get DoorOperationSealsPasscheck() {
-        return this.doorOperationSealsCheck === 'Pass';
+        return this.fields.Door_Operation_Seals__c === 'Pass';
     }
     get DoorOperationSealsFailcheck() {
-        return this.doorOperationSealsCheck === 'Fail';
+        return this.fields.Door_Operation_Seals__c === 'Fail';
     }
     get DoorOperationSealsNacheck() {
-        return this.doorOperationSealsCheck === 'Not Applicable';
+        return this.fields.Door_Operation_Seals__c === 'Not Applicable';
     }
 
     get SpringsAirBagsHeightPasscheck() {
-    return this.springsAirBagsHeight === 'Pass';
+    return this.fields.Springs_Air_Bags_Height__c === 'Pass';
     }
     get SpringsAirBagsHeightFailcheck() {
-        return this.springsAirBagsHeight === 'Fail';
+        return this.fields.Springs_Air_Bags_Height__c === 'Fail';
     }
     get SpringsAirBagsHeightNacheck() {
-        return this.springsAirBagsHeight === 'Not Applicable';
+        return this.fields.Springs_Air_Bags_Height__c === 'Not Applicable';
     }
 
     get SpringHangersPasscheck() {
-        return this.springHangers === 'Pass';
+        return this.fields.Spring_Hangers__c === 'Pass';
     }
     get SpringHangersFailcheck() {
-        return this.springHangers === 'Fail';
+        return this.fields.Spring_Hangers__c === 'Fail';
     }
     get SpringHangersNacheck() {
-        return this.springHangers === 'Not Applicable';
+        return this.fields.Spring_Hangers__c === 'Not Applicable';
     }
 
     get FrontUBoltTorquePasscheck() {
-        return this.frontUBoltTorque270_360lbFt === 'Pass';
+        return this.fields.Front_U_Bolt_Torque_270_360_lb_ft__c === 'Pass';
     }
     get FrontUBoltTorqueFailcheck() {
-        return this.frontUBoltTorque270_360lbFt === 'Fail';
+        return this.fields.Front_U_Bolt_Torque_270_360_lb_ft__c === 'Fail';
     }
     get FrontUBoltTorqueNacheck() {
-        return this.frontUBoltTorque270_360lbFt === 'Not Applicable';
+        return this.fields.Front_U_Bolt_Torque_270_360_lb_ft__c === 'Not Applicable';
     }
 
     get RearUBoltTorquePasscheck() {
-        return this.rearUBoltTorque420_500lbFt === 'Pass';
+        return this.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c === 'Pass';
     }
     get RearUBoltTorqueFailcheck() {
-        return this.rearUBoltTorque420_500lbFt === 'Fail';
+        return this.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c === 'Fail';
     }
     get RearUBoltTorqueNacheck() {
-        return this.rearUBoltTorque420_500lbFt === 'Not Applicable';
+        return this.fields.Rear_U_Bolt_Torque_420_500_lb_ft__c === 'Not Applicable';
     }
 
     get TorqueRadiusTrackingComponentsPasscheck() {
-        return this.torqueRadiusOrTrackingComponents === 'Pass';
+        return this.fields.Torque_Radius_or_Tracking_Components__c === 'Pass';
     }
     get TorqueRadiusTrackingComponentsFailcheck() {
-        return this.torqueRadiusOrTrackingComponents === 'Fail';
+        return this.fields.Torque_Radius_or_Tracking_Components__c === 'Fail';
     }
     get TorqueRadiusTrackingComponentsNacheck() {
-        return this.torqueRadiusOrTrackingComponents === 'Not Applicable';
+        return this.fields.Torque_Radius_or_Tracking_Components__c === 'Not Applicable';
     }
 
     get InspectReplaceCabinAirFilterPasscheck() {
-        return this.InspectReplaceCabinAirFilter === 'Pass';
+        return this.fields.Inspect_Replace_Cabin_Air_Filter__c === 'Pass';
     }
     get InspectReplaceCabinAirFilterFailcheck() {
-        return this.InspectReplaceCabinAirFilter === 'Fail';
+        return this.fields.Inspect_Replace_Cabin_Air_Filter__c === 'Fail';
     }
     get InspectReplaceCabinAirFilterNacheck() {
-        return this.InspectReplaceCabinAirFilter === 'Not Applicable';
+        return this.fields.Inspect_Replace_Cabin_Air_Filter__c === 'Not Applicable';
     }
 
     get LockOrSideRingPasscheck() {
-        return this.lockOrSideRing === 'Pass';
+        return this.fields.Lock_or_Side_Ring__c === 'Pass';
     }
     get LockOrSideRingFailcheck() {
-        return this.lockOrSideRing === 'Fail';
+        return this.fields.Lock_or_Side_Ring__c === 'Fail';
     }
     get LockOrSideRingNacheck() {
-        return this.lockOrSideRing === 'Not Applicable';
+        return this.fields.Lock_or_Side_Ring__c === 'Not Applicable';
     }
 
     get WeldsPasscheck() {
-        return this.welds === 'Pass';
+        return this.fields.Welds__c === 'Pass';
     }
     get WeldsFailcheck() {
-        return this.welds === 'Fail';
+        return this.fields.Welds__c === 'Fail';
     }
     get WeldsNacheck() {
-        return this.welds === 'Not Applicable';
+        return this.fields.Welds__c === 'Not Applicable';
     }
 
     get WheelsAndRimsPasscheck() {
-    return this.wheelsAndRims === 'Pass';
+    return this.fields.Wheels_and_Rims__c === 'Pass';
     }
     get WheelsAndRimsFailcheck() {
-        return this.wheelsAndRims === 'Fail';
+        return this.fields.Wheels_and_Rims__c === 'Fail';
     }
     get WheelsAndRimsNacheck() {
-        return this.wheelsAndRims === 'Not Applicable';
+        return this.fields.Wheels_and_Rims__c === 'Not Applicable';
     }
 
     get StudsAndLugNutsPasscheck() {
-        return this.studsAndLugNuts === 'Pass';
+        return this.fields.Studs_and_Lug_Nuts__c === 'Pass';
     }
     get StudsAndLugNutsFailcheck() {
-        return this.studsAndLugNuts === 'Fail';
+        return this.fields.Studs_and_Lug_Nuts__c === 'Fail';
     }
     get StudsAndLugNutsNacheck() {
-        return this.studsAndLugNuts === 'Not Applicable';
+        return this.fields.Studs_and_Lug_Nuts__c === 'Not Applicable';
     }
 
     get WheelBearingsPasscheck() {
-        return this.wheelBearings === 'Pass';
+        return this.fields.Wheel_Bearings__c === 'Pass';
     }
     get WheelBearingsFailcheck() {
-        return this.wheelBearings === 'Fail';
+        return this.fields.Wheel_Bearings__c === 'Fail';
     }
     get WheelBearingsNacheck() {
-        return this.wheelBearings === 'Not Applicable';
+        return this.fields.Wheel_Bearings__c === 'Not Applicable';
     }
 
     get AxleSealsPasscheck() {
-        return this.axleSeals === 'Pass';
+        return this.fields.Axle_Seals__c === 'Pass';
     }
     get AxleSealsFailcheck() {
-        return this.axleSeals === 'Fail';
+        return this.fields.Axle_Seals__c === 'Fail';
     }
     get AxleSealsNacheck() {
-        return this.axleSeals === 'Not Applicable';
+        return this.fields.Axle_Seals__c === 'Not Applicable';
     }
 
     get MudflapsPasscheck() {
-        return this.mudflaps === 'Pass';
+        return this.fields.Mudflaps__c === 'Pass';
     }
     get MudflapsFailcheck() {
-        return this.mudflaps === 'Fail';
+        return this.fields.Mudflaps__c === 'Fail';
     }
     get MudflapsNacheck() {
-        return this.mudflaps === 'Not Applicable';
+        return this.fields.Mudflaps__c === 'Not Applicable';
     }
 
     get TrianglesPasscheck() {
-    return this.triangles === 'Pass';
+    return this.fields.Triangles__c === 'Pass';
     }
     get TrianglesFailcheck() {
-        return this.triangles === 'Fail';
+        return this.fields.Triangles__c === 'Fail';
     }
     get TrianglesNacheck() {
-        return this.triangles === 'Not Applicable';
+        return this.fields.Triangles__c === 'Not Applicable';
     }
 
     // Extinguisher__c
     get ExtinguisherPasscheck() {
-        return this.extinguisher === 'Pass';
+        return this.fields.Extinguisher__c === 'Pass';
     }
     get ExtinguisherFailcheck() {
-        return this.extinguisher === 'Fail';
+        return this.fields.Extinguisher__c === 'Fail';
     }
     get ExtinguisherNacheck() {
-        return this.extinguisher === 'Not Applicable';
+        return this.fields.Extinguisher__c === 'Not Applicable';
     }
 
     // Placards_Holders__c
     get PlacardsHoldersPasscheck() {
-        return this.placardsHolders === 'Pass';
+        return this.fields.Placards_Holders__c === 'Pass';
     }
     get PlacardsHoldersFailcheck() {
-        return this.placardsHolders === 'Fail';
+        return this.fields.Placards_Holders__c === 'Fail';
     }
     get PlacardsHoldersNacheck() {
-        return this.placardsHolders === 'Not Applicable';
+        return this.fields.Placards_Holders__c === 'Not Applicable';
     }
 
     // Horn__c
     get HornPasscheck() {
-        return this.horn === 'Pass';
+        return this.fields.Horn__c === 'Pass';
     }
     get HornFailcheck() {
-        return this.horn === 'Fail';
+        return this.fields.Horn__c === 'Fail';
     }
     get HornNacheck() {
-        return this.horn === 'Not Applicable';
+        return this.fields.Horn__c === 'Not Applicable';
     }
 
     // Steering_Axle__c
     get SteeringAxlePasscheck() {
-        return this.steeringAxle === 'Pass';
+        return this.fields.Steering_Axle__c === 'Pass';
     }
     get SteeringAxleFailcheck() {
-        return this.steeringAxle === 'Fail';
+        return this.fields.Steering_Axle__c === 'Fail';
     }
     get SteeringAxleNacheck() {
-        return this.steeringAxle === 'Not Applicable';
+        return this.fields.Steering_Axle__c === 'Not Applicable';
     }
 
     // All_Other_Tires__c
     get AllOtherTiresPasscheck() {
-        return this.allOtherTires === 'Pass';
+        return this.fields.All_Other_Tires__c === 'Pass';
     }
     get AllOtherTiresFailcheck() {
-        return this.allOtherTires === 'Fail';
+        return this.fields.All_Other_Tires__c === 'Fail';
     }
     get AllOtherTiresNacheck() {
-        return this.allOtherTires === 'Not Applicable';
+        return this.fields.All_Other_Tires__c === 'Not Applicable';
     }
 
     // Completed__c
     get CompletedPasscheck() {
-        return this.completed === 'Pass';
+        return this.fields.Completed__c === 'Pass';
     }
     get CompletedFailcheck() {
-        return this.completed === 'Fail';
+        return this.fields.Completed__c === 'Fail';
     }
     get CompletedNacheck() {
-        return this.completed === 'Not Applicable';
+        return this.fields.Completed__c === 'Not Applicable';
     }
 
     get Does_theDOT_InspectionDecalExpirePassCheck(){
-        return this.Does_theDOT_InspectionDecalExpire === "Yes (Complete both 'B' and 'C')";
+        return this.fields.Does_the_DOT_Inspection_Decal_Expire__c === "Yes (Complete both 'B' and 'C')";
     }
     get Does_theDOT_InspectionDecalExpireFailCheck(){
-        return this.Does_theDOT_InspectionDecalExpire === "No (Skip directly to 'C')";
+        return this.fields.Does_the_DOT_Inspection_Decal_Expire__c === "No (Skip directly to 'C')";
     }
 
     get Does_theState_InspectionDecalExpireYesCheck(){
-        return this.DoestheStateInspectionDecalExpire === "Yes (Complete Both 'E' and 'F')";
+        return this.fields.Does_the_State_Inspection_Decal_Expire__c === "Yes (Complete Both 'E' and 'F')";
     }
     get Does_theState_InspectionDecalExpireNoCheck(){
-        return this.DoestheStateInspectionDecalExpire === "No (Skip directly to 'F')";
+        return this.fields.Does_the_State_Inspection_Decal_Expire__c === "No (Skip directly to 'F')";
     }
     get Does_theState_InspectionDecalExpireNaCheck(){
-        return this.DoestheStateInspectionDecalExpire === "N/A";
+        return this.fields.Does_the_State_Inspection_Decal_Expire__c === "N/A";
     }
 
      handleAutoResize(event) {
